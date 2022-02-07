@@ -8,13 +8,14 @@ public class GameManager : MonoBehaviour
     public enum GameState
     {
         Playing,
-        Stop
+        Stop,
+        GameOver
     }
 
     public GameState gameState;
 
     [HideInInspector]
-    public float score;
+    private int score;
 
 
     private void Awake()
@@ -22,8 +23,13 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    public void GetScore(float score)
+    public void GetScore(int score)
     {
         this.score = this.score + score;
+    }
+
+    public int SetScore()
+    {
+        return score;
     }
 }

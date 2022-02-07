@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2797821819724563733}
   - component: {fileID: 1204477261010066822}
   - component: {fileID: 6569203044177377548}
+  - component: {fileID: 975929554902207783}
   m_Layer: 0
   m_Name: gem-1
   m_TagString: Untagged
@@ -142,3 +143,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc45fa534697d544faa2cd6d66307d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &975929554902207783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2797821819724563732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6241aec50892fe74aa49e70f75a158d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 11, y: 0, z: -1}
+  speedX: 2
+  speedY: 2
+  minY: -1
+  maxY: 2
