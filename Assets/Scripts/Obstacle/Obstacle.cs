@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    protected virtual void Damage(int damage, Collider2D collider2D)
+    protected virtual void Damage(int damage, Collider2D collider2D, bool canAttack)
     {
-        //collider2D.Player.hp -= damage;
-        
+        if(collider2D.tag == "Player" && canAttack)
+        {
+            //collider2D.Player.hp -= damage;   
+            canAttack = false;
+        }
+    }
+
+    protected virtual void Spawn(Vector3 position)
+    {
+        transform.position = position;
     }
 }
