@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    protected Player_Stat stat;
     protected Rigidbody2D rigid;
     protected BoxCollider2D collider;
     protected SpriteRenderer sprtie;
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        stat = GetComponent<Player_Stat>();
         rigid = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
         sprtie = GetComponent<SpriteRenderer>();
@@ -26,5 +28,4 @@ public class Player : MonoBehaviour
     {
 
     }
-
 }

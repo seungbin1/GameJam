@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Player_Move : Player
 {
-    [SerializeField] private float speed = 10f;
-    [SerializeField] private float power = 20f;
-
     protected override void Start()
     {
         base.Start();
@@ -21,12 +18,12 @@ public class Player_Move : Player
 
     void Run()
     {
-        rigid.velocity = new Vector2(Vector2.right.x * speed, rigid.velocity.y);
+        rigid.velocity = new Vector2(Vector2.right.x * stat.Speed, rigid.velocity.y);
     }
 
     void Jump()
     {
-        rigid.AddForce(Vector2.up * power, ForceMode2D.Impulse);
+        rigid.AddForce(Vector2.up * stat.JumpPower, ForceMode2D.Impulse);
     }
 
     void OnDestroy()
