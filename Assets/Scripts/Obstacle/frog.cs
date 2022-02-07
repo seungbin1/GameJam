@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Frog : Obstacle, IDamage
 {
-    [SerializeField] private float attackPower;
+    [SerializeField] private int attackPower;
     [SerializeField] private float speed;
     [SerializeField] private float superJump;
     [SerializeField] private float maxJumpTime;
@@ -35,14 +35,9 @@ public class Frog : Obstacle, IDamage
         Return();
     }
 
-    public void OnDamage(Collider2D collider, float damage)
+    public void OnDamage(int damage)
     {
         PlayerStatsManager.Instance.TakeDamage(damage);
-    }
-
-    protected override void Damage(Collider2D collider2D, bool canAttack)
-    {
-        base.Damage(collider2D, canAttack);
     }
 
     protected override void Move(float Speed)
@@ -57,7 +52,6 @@ public class Frog : Obstacle, IDamage
             Jump();
             jumpTime = maxJumpTime;
         }
-
     }
 
     private void Jump()
@@ -68,8 +62,9 @@ public class Frog : Obstacle, IDamage
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        OnDamage(collision, attackPower);
-        //Damage(collision, canAttack);
-        canAttack = false;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            OnDamage(attackPower);
+        }  
     }
 }

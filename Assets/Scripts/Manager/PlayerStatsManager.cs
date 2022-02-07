@@ -46,19 +46,29 @@ public class PlayerStatsManager : MonoBehaviour
     [SerializeField] private int hp = 3;
     public int HP { get => hp; }
 
+    [SerializeField] private int maxHp = 3;
+    public int MaxHp { get => maxHp; }
+
     [SerializeField] private float speed = 0f;
     public float Speed { get => speed; }
 
     [SerializeField] private float jumpPower = 20f;
     public float JumpPower { get => jumpPower; }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
-
+        this.hp -= damage;
+        ClampHP();
     }
 
-    public void Heal()
+    public void Heal(int heal)
     {
+        this.hp += heal;
+        ClampHP();
+    }
 
+    void ClampHP()
+    {
+        hp = Mathf.Clamp(hp, 0, maxHp);
     }
 }
