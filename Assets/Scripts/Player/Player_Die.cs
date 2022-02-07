@@ -6,9 +6,7 @@ public class Player_Die : Player
 {
     void Die()
     {
-        if (stat.HP <= 0)
-        {
-            animator.SetBool("Die", true);
-        }  
+        animator.SetBool("Die", true);
+        GameManager.instance.gameState = GameManager.GameState.Stop;
     }
 }

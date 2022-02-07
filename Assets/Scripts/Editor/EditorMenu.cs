@@ -6,9 +6,15 @@ using UnityEditor;
 
 public class EditorMenu : MonoBehaviour
 {
-    [MenuItem("Scenes/GameScene")]
+    [MenuItem("Scenes/Game/GameScene")]
     static void EditorMenu_LoadInGameScene() // 게임 씬
     {
         EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity"); 
+    }
+
+    [MenuItem("Scenes/Test/JunseoScene")]
+    static void EditorMenu_LoadInJunseoScene() // 준서 씬
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/JunseoScene.unity");
     }
 }

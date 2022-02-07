@@ -7,7 +7,7 @@ public class EventManager
 {
     private static Hashtable eventHashtable = new Hashtable();
 
-    public static void AddEvent(string eventName, Action addEvent)
+    public static void AddEvent_Action(string eventName, Action addEvent)
     {
         if (eventHashtable.ContainsKey(eventName))
         {
@@ -18,7 +18,7 @@ public class EventManager
             eventHashtable.Add(eventName, addEvent);
         }
     }
-    public static void AddEvent(string eventName, Action<GameObject> addEvent)
+    public static void AddEvent_Action(string eventName, Action<GameObject> addEvent)
     {
         if (eventHashtable.ContainsKey(eventName))
         {
@@ -29,7 +29,7 @@ public class EventManager
             eventHashtable.Add(eventName, addEvent);
         }
     }
-    public static void AddEvent(string eventName, Action<float, float> addEvent)
+    public static void AddEvent_Action(string eventName, Action<float, float> addEvent)
     {
         if (eventHashtable.ContainsKey(eventName))
         {
@@ -40,7 +40,7 @@ public class EventManager
             eventHashtable.Add(eventName, addEvent);
         }
     }
-    public static void AddEvent(string eventName, Action<Action> addEvent)
+    public static void AddEvent_Action(string eventName, Action<Action> addEvent)
     {
         if (eventHashtable.ContainsKey(eventName))
         {
@@ -51,7 +51,18 @@ public class EventManager
             eventHashtable.Add(eventName, addEvent);
         }
     }
-    public static void AddEvent_Corutine(string eventName, Func<IEnumerator> addEvent)
+    public static void AddEvent_Function(string eventName, Func<bool, bool> addEvent)
+    {
+        if (eventHashtable.ContainsKey(eventName))
+        {
+            eventHashtable[eventName] = addEvent;
+        }
+        else
+        {
+            eventHashtable.Add(eventName, addEvent);
+        }
+    }
+    public static void AddEvent_Function(string eventName, Func<bool> addEvent)
     {
         if (eventHashtable.ContainsKey(eventName))
         {
@@ -75,7 +86,8 @@ public class EventManager
         }
     }
 
-    public static void TriggerEvent(string eventName)
+    // void 타입
+    public static void TriggerEvent_Action(string eventName)
     {
         Action action;
 
@@ -88,22 +100,7 @@ public class EventManager
             }
         }
     }
-    public static IEnumerator TriggerEvent_Corutine(string eventName)
-    {
-        Func<IEnumerator> func;
-
-        if (eventHashtable.ContainsKey(eventName))
-        {
-            if (eventHashtable[eventName] is Func<IEnumerator>)
-            {
-                func = (Func<IEnumerator>)eventHashtable[eventName];
-                func?.Invoke();
-            }
-        }
-         
-        yield return 0; 
-    } 
-    public static void TriggerEvent(string eventName, GameObject obj)
+    public static void TriggerEvent_Action(string eventName, GameObject param)
     {
         Action<GameObject> action;
 
@@ -112,11 +109,11 @@ public class EventManager
             if (eventHashtable[eventName] is Action<GameObject>)
             {
                 action = (Action<GameObject>)eventHashtable[eventName]; // 언박싱
-                action?.Invoke(obj);
+                action?.Invoke(param);
             }
         }
     }
-    public static void TriggerEvent(string eventName, float moveX, float moveY)
+    public static void TriggerEvent_Action(string eventName, float param1, float param2)
     {
         Action<float, float> action;
 
@@ -125,8 +122,25 @@ public class EventManager
             if (eventHashtable[eventName] is Action<float, float>)
             {
                 action = (Action<float, float>)eventHashtable[eventName]; // 언박싱
-                action?.Invoke(moveX, moveY);
+                action?.Invoke(param1, param2);
             }
         }
+    }
+
+    // bool 타입
+    public static bool TriggerEvent_Function(string eventName)
+    {
+        Func<bool> function;
+
+        if (eventHashtable.ContainsKey(eventName))
+        {
+            if (eventHashtable[eventName] is Func<bool>)
+            {
+                function = (Func<bool>)eventHashtable[eventName];
+                return function.Invoke();
+            }
+        }
+
+        return false;
     }
 }

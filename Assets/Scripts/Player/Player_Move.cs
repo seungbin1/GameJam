@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Player_Move : Player
 {
+    [SerializeField] private LayerMask layer;
+
     protected override void Start()
     {
         base.Start();
-        EventManager.AddEvent("JUMP", Jump);
+        EventManager.AddEvent_Action("JUMP", Jump);
+        EventManager.AddEvent_Function("ISGROUND", IsGround);
     }
 
     protected override void Update()
@@ -26,8 +29,14 @@ public class Player_Move : Player
         rigid.AddForce(Vector2.up * stat.JumpPower, ForceMode2D.Impulse);
     }
 
+    bool IsGround()
+    {
+        return Physics2D.OverlapBox(collider.bounds.center, collider.bounds.size, 180f, layer);
+    }
+
     void OnDestroy()
     {
         EventManager.RemoveEvent("JUMP");
+        EventManager.RemoveEvent("ISGROUND");
     }
 }
