@@ -7,18 +7,26 @@ public class Opossum : Obstacle
     [SerializeField]
     private Vector3 spawnPositon;
 
+    private bool canAttack;
+
     private void OnEnable()
     {
+        canAttack = true;
         Spawn(spawnPositon);
     }
 
-    protected override void Damage(int damage, Collider2D collider2D, bool canAttack)
+    protected override void Damage(Collider2D collider2D, bool canAttack)
     {
-        base.Damage(damage, collider2D, canAttack);
+        base.Damage(collider2D, canAttack);
     }
 
     protected override void Spawn(Vector3 position)
     {
         base.Spawn(position);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Damage(collision, canAttack);
     }
 }
