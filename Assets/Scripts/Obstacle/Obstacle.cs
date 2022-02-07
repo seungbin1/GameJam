@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    [SerializeField]
+    private Vector3 position;
     protected virtual void Damage(Collider2D collider2D, bool canAttack)
     {
         if(collider2D.tag == "Player" && canAttack)
@@ -13,7 +15,7 @@ public class Obstacle : MonoBehaviour
         }
     }
 
-    protected virtual void Spawn(Vector3 position)
+    protected virtual void Spawn()
     {
         transform.position = position;
     }
@@ -23,6 +25,14 @@ public class Obstacle : MonoBehaviour
         if(GameManager.instance.gameState == GameManager.GameState.Playing)
         {
             transform.position -= new Vector3(Speed * Time.deltaTime, 0, 0);
+        }
+    }
+
+    protected virtual void Return()
+    {
+        if(transform.position.x < -10)
+        {
+            ObjectPool.instacne.ReturnGameObject(this.gameObject);
         }
     }
 }

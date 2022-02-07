@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Eagle : Obstacle
+public class Gem : Obstacle
 {
-    private bool canAttack;
-
     [SerializeField]
-    private float speedX;   
+    private float speedX;
 
     [SerializeField]
     private float speedY;
@@ -17,19 +15,13 @@ public class Eagle : Obstacle
 
     private void OnEnable()
     {
-        canAttack = true;
         Spawn();
+        Return();
     }
 
     private void Update()
     {
         Move(speedX);
-        Return();
-    }
-
-    protected override void Damage(Collider2D collider2D, bool canAttack)
-    {
-        base.Damage(collider2D, canAttack);
     }
 
     protected override void Move(float Speed)
@@ -43,9 +35,26 @@ public class Eagle : Obstacle
         }
     }
 
+    protected override void Spawn()
+    {
+        base.Spawn();
+    }
+
+    protected virtual void Return(Collider2D collision = null)
+    {
+        base.Return();
+        if (collision)
+        {
+            ObjectPool.instacne.ReturnGameObject(this.gameObject);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Damage(collision, canAttack);
-        canAttack = false;
+        if (collision.tag == "Player")
+        {
+            Return(collision);
+            GameManager.instance.GetScore(1000);
+        }
     }
 }

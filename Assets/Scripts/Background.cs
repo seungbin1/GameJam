@@ -19,7 +19,7 @@ public class Background : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).transform.position -= new Vector3(speed * Time.deltaTime,0,0);
-            if(transform.GetChild(i).transform.localPosition.x < minPosition)
+            if(transform.GetChild(i).transform.localPosition.x <= minPosition)
             {
                 transform.GetChild(i).transform.localPosition = new Vector3(initPosition, 0, 0);
             }

@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 2674709490804311243}
   - component: {fileID: 9034325591906548172}
   - component: {fileID: 4097061632036547150}
-  m_Layer: 0
+  - component: {fileID: 4675486055958128131}
+  - component: {fileID: 4957895174039184756}
+  m_Layer: 6
   m_Name: eagle-attack-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024124464070846030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.356, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,12 +118,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!61 &9034325591906548172
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -167,3 +169,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4675486055958128131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024124464070846030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b96905895c2954f897ecab82a3beae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 12, y: 0, z: -1}
+  speedX: 3
+  speedY: 4
+  minY: -1
+  maxY: 4
+--- !u!114 &4957895174039184756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024124464070846030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc45fa534697d544faa2cd6d66307d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Opossum : Obstacle
 {
-    [SerializeField]
-    private Vector3 spawnPositon;
-
     private bool canAttack;
+
+    [SerializeField]
+    private float speed;
 
     private void OnEnable()
     {
         canAttack = true;
-        Spawn(spawnPositon);
+        Spawn();
+    }
+
+    private void Update()
+    {
+        Move(speed);
+        Return();
     }
 
     protected override void Damage(Collider2D collider2D, bool canAttack)
@@ -20,13 +26,14 @@ public class Opossum : Obstacle
         base.Damage(collider2D, canAttack);
     }
 
-    protected override void Spawn(Vector3 position)
+    protected override void Move(float Speed)
     {
-        base.Spawn(position);
+        base.Move(Speed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Damage(collision, canAttack);
+        canAttack = false;
     }
 }

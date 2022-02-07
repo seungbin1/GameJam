@@ -5,13 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
-
     public enum GameState
     {
         Playing,
@@ -20,8 +13,17 @@ public class GameManager : MonoBehaviour
 
     public GameState gameState;
 
-    private void Start()
+    [HideInInspector]
+    public float score;
+
+
+    private void Awake()
     {
-        gameState = GameState.Playing;
+        instance = this;
+    }
+
+    public void GetScore(float score)
+    {
+        this.score = this.score + score;
     }
 }
