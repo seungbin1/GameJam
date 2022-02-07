@@ -59,7 +59,7 @@ public class GameMenu : MonoBehaviour
     {
         Time.timeScale = 0;
         menuObj.SetActive(true);
-        gameObject.SetActive(false);
+        stopButton.SetActive(true);
     }
 
     //게임 멈춤에서 계속하기 버튼
