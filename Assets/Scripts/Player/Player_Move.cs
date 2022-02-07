@@ -21,12 +21,12 @@ public class Player_Move : Player
 
     void Run()
     {
-        rigid.velocity = new Vector2(Vector2.right.x * stat.Speed, rigid.velocity.y);
+        rigid.velocity = new Vector2(Vector2.right.x * PlayerStatsManager.Instance.Speed, rigid.velocity.y);
     }
 
     void Jump()
     {
-        rigid.AddForce(Vector2.up * stat.JumpPower, ForceMode2D.Impulse);
+        rigid.AddForce(Vector2.up * PlayerStatsManager.Instance.JumpPower, ForceMode2D.Impulse);
     }
 
     bool IsGround()

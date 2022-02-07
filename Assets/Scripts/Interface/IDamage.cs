@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IDamage
 {
-    void OnDamage(Collision2D collision, float damage);
+    void OnDamage(Collider2D collider, float damage);
 }

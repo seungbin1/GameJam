@@ -6,6 +6,7 @@ public class Obstacle : MonoBehaviour
 {
     [SerializeField]
     private Vector3 position;
+
     protected virtual void Damage(Collider2D collider2D, bool canAttack)
     {
         if(collider2D.tag == "Player" && canAttack)
@@ -13,6 +14,16 @@ public class Obstacle : MonoBehaviour
             //collider2D.Player.hp--;   
             canAttack = false;
         }
+    }
+
+    protected virtual void Start()
+    {
+
+    }
+
+    protected virtual void Update()
+    {
+
     }
 
     protected virtual void Spawn()
