@@ -1,7 +1,148 @@
 fileFormatVersion: 2
 guid: 0bced92f0c14f0e44b7e0323a9da19b3
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6384026081489724154
+    second: tard_0
+  - first:
+      213: 1569593006980790229
+    second: tard_1
+  - first:
+      213: 6773274513608266877
+    second: tard_2
+  - first:
+      213: 3987525431209392273
+    second: tard_3
+  - first:
+      213: 4394224122242053
+    second: tard_4
+  - first:
+      213: 784247724012867438
+    second: tard_5
+  - first:
+      213: 87388948533203128
+    second: tard_6
+  - first:
+      213: 5729527664147492400
+    second: tard_7
+  - first:
+      213: 9196651843530503758
+    second: tard_8
+  - first:
+      213: -3818154816822484115
+    second: tard_9
+  - first:
+      213: 7629547253556579178
+    second: tard_10
+  - first:
+      213: 9210055160118411077
+    second: tard_11
+  - first:
+      213: 4429735508361418425
+    second: tard_12
+  - first:
+      213: -6635851784402765384
+    second: tard_13
+  - first:
+      213: 2126888515988034116
+    second: tard_14
+  - first:
+      213: -7655702874374312816
+    second: tard_15
+  - first:
+      213: -3723958053699633165
+    second: tard_16
+  - first:
+      213: -1548582543962483142
+    second: tard_17
+  - first:
+      213: -5765313098991582607
+    second: tard_18
+  - first:
+      213: -7627935106827555228
+    second: tard_19
+  - first:
+      213: 5854985187602300909
+    second: tard_20
+  - first:
+      213: -5174510289645557509
+    second: tard_21
+  - first:
+      213: 8599453013058107992
+    second: tard_22
+  - first:
+      213: 8873517072370348330
+    second: tard_23
+  - first:
+      213: -7373546368963302844
+    second: tard_24
+  - first:
+      213: 5211081067199070896
+    second: tard_25
+  - first:
+      213: 668584218316312834
+    second: tard_26
+  - first:
+      213: 8627395536804959306
+    second: tard_27
+  - first:
+      213: -6483051168913240035
+    second: tard_28
+  - first:
+      213: -7547880121625822782
+    second: tard_29
+  - first:
+      213: 3563673550247941518
+    second: tard_30
+  - first:
+      213: 3941688190959557173
+    second: tard_31
+  - first:
+      213: 8332716816844139263
+    second: tard_32
+  - first:
+      213: -5147938815114006000
+    second: tard_33
+  - first:
+      213: 2567627132458375829
+    second: tard_34
+  - first:
+      213: 6999303979123619265
+    second: tard_35
+  - first:
+      213: 1909344984992743519
+    second: tard_36
+  - first:
+      213: -396623594578465485
+    second: tard_37
+  - first:
+      213: -3804517900872528415
+    second: tard_38
+  - first:
+      213: 5666370825854523412
+    second: tard_39
+  - first:
+      213: 175199425155120668
+    second: tard_40
+  - first:
+      213: 7894570765799250244
+    second: tard_41
+  - first:
+      213: -4581878157075277014
+    second: tard_42
+  - first:
+      213: -8723182332765068821
+    second: tard_43
+  - first:
+      213: -6498418184439396184
+    second: tard_44
+  - first:
+      213: -3016065245318170641
+    second: tard_45
+  - first:
+      213: -5760341726093811732
+    second: tard_46
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +182,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +216,1020 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tard_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60dd9f75a126767a0800000000000000
+      internalID: -6384026081489724154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7f607168058c510800000000000000
+      internalID: 1569593006980790229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 3
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74d3d5a8418ffd50800000000000000
+      internalID: 6773274513608266877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 198721cb049865730800000000000000
+      internalID: 3987525431209392273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_4
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 4
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504aed7068c9f0000800000000000000
+      internalID: 4394224122242053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_5
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 3
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f02bd562532ea00800000000000000
+      internalID: 784247724012867438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_6
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b0dd9229c7763100800000000000000
+      internalID: 87388948533203128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_7
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 4
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ee840ed0f538f40800000000000000
+      internalID: 5729527664147492400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_8
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 3
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46b390302211af70800000000000000
+      internalID: 9196651843530503758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_9
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6369dd6c60330bc0800000000000000
+      internalID: -3818154816822484115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_10
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b0c45ddc891e960800000000000000
+      internalID: 7629547253556579178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_11
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f7c940f50b0df70800000000000000
+      internalID: 9210055160118411077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_12
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 3
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b611d0a9f4997d30800000000000000
+      internalID: 4429735508361418425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_13
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b9f788d5f7b8e3a0800000000000000
+      internalID: -6635851784402765384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_14
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 3
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 442135826d9348d10800000000000000
+      internalID: 2126888515988034116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_15
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c6bf22cca71c590800000000000000
+      internalID: -7655702874374312816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_16
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff37ca61e7d15cc0800000000000000
+      internalID: -3723958053699633165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_17
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 3
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36deb98164528ae0800000000000000
+      internalID: -1548582543962483142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_18
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 5
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17243bb484e7dffa0800000000000000
+      internalID: -5765313098991582607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_19
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 3
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46eefc35f61242690800000000000000
+      internalID: -7627935106827555228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_20
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 4
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def7530d106114150800000000000000
+      internalID: 5854985187602300909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_21
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 5
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8a21bae427038b0800000000000000
+      internalID: -5174510289645557509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_22
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 3
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85abdf914f4675770800000000000000
+      internalID: 8599453013058107992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_23
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 4
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21bffe63c0152b70800000000000000
+      internalID: 8873517072370348330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_24
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a2217e4a6eba990800000000000000
+      internalID: -7373546368963302844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_25
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 3
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b20a220f9a715840800000000000000
+      internalID: 5211081067199070896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_26
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 3
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2011d23edc9474900800000000000000
+      internalID: 668584218316312834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_27
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44dc04e78aaab770800000000000000
+      internalID: 8627395536804959306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_28
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 3
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10de308f439706a0800000000000000
+      internalID: -6483051168913240035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_29
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 3
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c9b24f050b804790800000000000000
+      internalID: -7547880121625822782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_30
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 3
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85dbf97636b47130800000000000000
+      internalID: 3563673550247941518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_31
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 3
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a1f759680b3b630800000000000000
+      internalID: 3941688190959557173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_32
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 3
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa2be9dbc1c3a370800000000000000
+      internalID: 8332716816844139263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_33
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 3
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0123faf2ce8de88b0800000000000000
+      internalID: -5147938815114006000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_34
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 7
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a16d9e54b02a320800000000000000
+      internalID: 2567627132458375829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_35
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 3
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c534a692e5822160800000000000000
+      internalID: 6999303979123619265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_36
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 4
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f508a20d52b5f7a10800000000000000
+      internalID: 1909344984992743519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_37
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 4
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33dac9f21f8ee7af0800000000000000
+      internalID: -396623594578465485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_38
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 4
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1edc0e85023a33bc0800000000000000
+      internalID: -3804517900872528415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_39
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 4
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41812b09e3ef2ae40800000000000000
+      internalID: 5666370825854523412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_40
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 4
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e393de2fe6e6200800000000000000
+      internalID: 175199425155120668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_41
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 4
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449d5a5c8462f8d60800000000000000
+      internalID: 7894570765799250244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_42
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 4
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b186b8716e960c0800000000000000
+      internalID: -4581878157075277014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_43
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 4
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be12390c2e701f680800000000000000
+      internalID: -8723182332765068821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_44
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 4
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a80d82671bf0d5a0800000000000000
+      internalID: -6498418184439396184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_45
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 4
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7b861a3a8c426d0800000000000000
+      internalID: -3016065245318170641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tard_46
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 4
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef515f38b72f00b0800000000000000
+      internalID: -5760341726093811732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
