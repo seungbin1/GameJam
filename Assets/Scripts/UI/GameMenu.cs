@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEditor;
+
 
 public class GameMenu : MonoBehaviour
 {
@@ -16,7 +15,8 @@ public class GameMenu : MonoBehaviour
         EXIT,
         GAMEOVER,
         SETTINGEXIT,
-        GAMESETTINGEXIT
+        GAMESETTINGEXIT,
+        GAMEEXIT
     }
     public Kind kind;
 
@@ -29,9 +29,14 @@ public class GameMenu : MonoBehaviour
 
     private Button button;
 
+    private AudioSource audioSource;
     private void Start()
     {
+        audioSource = GameObject.Find("SoundManager").transform.GetChild(0).GetComponent<AudioSource>();
+
         button = GetComponent<Button>();
+
+        button.onClick.AddListener(GameButtonSound);
         switch (kind)
         {
             case Kind.GAMESTOP:
@@ -52,18 +57,21 @@ public class GameMenu : MonoBehaviour
             case Kind.SETTINGEXIT:
                 button.onClick.AddListener(SettingExit);
                 break;
+            case Kind.GAMEEXIT:
+                button.onClick.AddListener(GameExit);
+                break;
         }
     }
     //게임 씬에서 게임 멈춤 버튼
-    public void GameStopButton()
+    private void GameStopButton()
     {
         Time.timeScale = 0;
         menuObj.SetActive(true);
-        stopButton.SetActive(true);
+        stopButton.SetActive(false);
     }
 
     //게임 멈춤에서 계속하기 버튼
-    public void Resume()
+    private void Resume()
     {
         Time.timeScale = 1;
         menuObj.SetActive(false);
@@ -71,28 +79,40 @@ public class GameMenu : MonoBehaviour
     }
 
     //게임 다시시작
-    public void Restart()
+    private void Restart()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(sceneName);
     }
 
     //게임 세팅
-    public void Setting()
+    private void Setting()
     {
         settingObj.SetActive(true);
     }
 
     //메인 화면으로 나가기
-    public void Exit()
+    private void Exit()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 
     //세팅 나가기 및 볼륨 저장
-    public void SettingExit()
+    private void SettingExit()
     {
         settingObj.SetActive(false);
+    }
+
+    //게임 나가기
+    private void GameExit()
+    {
+        Application.Quit();
+    }
+
+    //버튼 사운다
+    private void GameButtonSound()
+    {
+        audioSource.Play();
     }
 }
