@@ -7,6 +7,6 @@ public class Player_Die : Player
     void Die()
     {
         animator.SetBool("Die", true);
-        GameManager.instance.gameState = GameManager.GameState.Stop;
+        GameManager.Instance.gameState = GameManager.GameState.Stop;
     }
 }

@@ -24,12 +24,12 @@ public class Score : MonoBehaviour
         if(time < 0)
         {
             time = maxtime;
-            GameManager.instance.GetScore(10);
+            GameManager.Instance.GetScore(10);
         }
     }
 
     private void TextSeting()
     {
-        text.text = "SCORE\n" + GameManager.instance.SetScore();
+        text.text = "SCORE\n" + GameManager.Instance.SetScore();
     }
 }

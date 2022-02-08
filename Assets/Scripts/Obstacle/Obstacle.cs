@@ -24,7 +24,7 @@ public class Obstacle : MonoBehaviour
 
     protected virtual void Move(float Speed)
     {
-        if(GameManager.instance.gameState == GameManager.GameState.Playing)
+        if(GameManager.Instance.gameState == GameManager.GameState.Playing)
         {
             transform.position -= new Vector3(Speed * Time.deltaTime, 0, 0);
         }

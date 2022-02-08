@@ -21,7 +21,7 @@ public class ObjectSpawn : MonoBehaviour
 
     private void Update()
     {
-        if(GameManager.instance.gameState == GameManager.GameState.Playing)
+        if(GameManager.Instance.gameState == GameManager.GameState.Playing)
         {
             spawnlate -= Time.deltaTime;
             if(spawnlate <= 0)

@@ -56,6 +56,6 @@ public class Gem : Obstacle, IScore
 
     public void OnGetScore(int score)
     {
-        GameManager.instance.GetScore(score);
+        GameManager.Instance.GetScore(score);
     }
 }
