@@ -2,24 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gem : Obstacle
+public class Gem : Obstacle, IScore
 {
-    [SerializeField]
-    private float speedX;
+    [SerializeField] private int scorePoint = 1000;
+    [SerializeField] private float speedX;
+    [SerializeField] private float speedY;
+    [SerializeField] private float minY, maxY;
 
-    [SerializeField]
-    private float speedY;
-
-    [SerializeField]
-    private float minY, maxY;
-
-    private void OnEnable()
+    void OnEnable()
     {
         Spawn();
         Return();
     }
 
-    private void Update()
+    protected override void Update()
     {
         Move(speedX);
     }
@@ -49,12 +45,17 @@ public class Gem : Obstacle
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             Return(collision);
-            GameManager.instance.GetScore(1000);
+            OnGetScore(scorePoint);
         }
+    }
+
+    public void OnGetScore(int score)
+    {
+        GameManager.instance.GetScore(score);
     }
 }

@@ -6,7 +6,7 @@ public class InputMananger : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && EventManager.TriggerEvent_Function("ISGROUND"))
+        if (Input.GetButtonDown("Jump"))
         {
             EventManager.TriggerEvent_Action("JUMP");
         }  

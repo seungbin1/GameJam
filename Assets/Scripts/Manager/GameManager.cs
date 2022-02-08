@@ -18,9 +18,14 @@ public class GameManager : MonoBehaviour
     private int score;
 
 
-    private void Awake()
+    void Awake()
     {
         instance = this;
+    }
+
+    void Update()
+    {
+        
     }
 
     public void GetScore(int score)
@@ -32,4 +37,6 @@ public class GameManager : MonoBehaviour
     {
         return score;
     }
+
+
 }

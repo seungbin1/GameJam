@@ -2,24 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cherry : Obstacle
+public class Cherry : Obstacle, IHeal
 {
-    [SerializeField]
-    private float speedX;
+    [SerializeField] private int healAmount = 1;
+    [SerializeField] private float speedX;
+    [SerializeField] private float speedY;
+    [SerializeField] private float minY, maxY;
 
-    [SerializeField]
-    private float speedY;
-
-    [SerializeField]
-    private float minY, maxY;
-
-    private void OnEnable()
+    void OnEnable()
     {
         Spawn();
         Return();
     }
 
-    private void Update()
+    protected override void Update()
     {
         Move(speedX);
     }
@@ -44,12 +40,17 @@ public class Cherry : Obstacle
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             Return(collision);
-            //Player.hp++;
+            OnHeal(healAmount);
         }
+    }
+
+    public void OnHeal(int heal)
+    {
+        PlayerStatsManager.Instance.TakeHeal(heal);
     }
 }

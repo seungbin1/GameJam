@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class Frog : Obstacle, IDamage
 {
+    [SerializeField] private LayerMask player;
+    [SerializeField] private LayerMask ground;
+
     [SerializeField] private int attackPower;
     [SerializeField] private float speed;
     [SerializeField] private float superJump;
     [SerializeField] private float maxJumpTime;
 
     private float jumpTime;
-    private bool canAttack;
 
-    Rigidbody2D rigid;
-    Animator animator;
+    private Rigidbody2D rigid;
+    private BoxCollider2D collider;
+    private Animator animator;
 
     void OnEnable()
     {
         jumpTime = maxJumpTime;
-        canAttack = true;
         Spawn();
     }
 
@@ -26,6 +28,7 @@ public class Frog : Obstacle, IDamage
     {
         base.Start();
         rigid = GetComponent<Rigidbody2D>();
+        collider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
     }
 
@@ -43,24 +46,33 @@ public class Frog : Obstacle, IDamage
     protected override void Move(float Speed)
     {
         base.Move(Speed);
-
-        jumpTime -= Time.deltaTime;
-
         animator.SetBool("Jump", false);
-        if (jumpTime < 0)
-        {
-            Jump();
-            jumpTime = maxJumpTime;
-        }
+
+        //jumpTime -= Time.deltaTime;
+
+
+        //if (jumpTime < 0)
+        //{
+        //    Jump();
+        //    jumpTime = maxJumpTime;
+        //}
     }
 
-    private void Jump()
+    void Jump()
     {
         rigid.velocity = Vector2.up * superJump;
         animator.SetBool("Jump", true);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Jump();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {

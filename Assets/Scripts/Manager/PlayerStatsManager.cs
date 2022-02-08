@@ -61,7 +61,7 @@ public class PlayerStatsManager : MonoBehaviour
         ClampHP();
     }
 
-    public void Heal(int heal)
+    public void TakeHeal(int heal)
     {
         this.hp += heal;
         ClampHP();

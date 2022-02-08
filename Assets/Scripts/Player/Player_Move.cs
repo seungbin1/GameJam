@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Player_Move : Player
 {
@@ -10,7 +11,6 @@ public class Player_Move : Player
     {
         base.Start();
         EventManager.AddEvent_Action("JUMP", Jump);
-        EventManager.AddEvent_Function("ISGROUND", IsGround);
     }
 
     protected override void Update()
@@ -26,7 +26,10 @@ public class Player_Move : Player
 
     void Jump()
     {
-        rigid.AddForce(Vector2.up * PlayerStatsManager.Instance.JumpPower, ForceMode2D.Impulse);
+        if (IsGround())
+        {
+            rigid.AddForce(Vector2.up * PlayerStatsManager.Instance.JumpPower, ForceMode2D.Impulse);
+        }   
     }
 
     bool IsGround()
@@ -37,6 +40,5 @@ public class Player_Move : Player
     void OnDestroy()
     {
         EventManager.RemoveEvent("JUMP");
-        EventManager.RemoveEvent("ISGROUND");
     }
 }
