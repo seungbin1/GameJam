@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Frog : Obstacle, IDamage
-{
-    [SerializeField] private LayerMask player;
-    [SerializeField] private LayerMask ground;
-
-    [SerializeField] private int attackPower;
+{ 
     [SerializeField] private float speed;
     [SerializeField] private float superJump;
     [SerializeField] private float maxJumpTime;
-
-    private float jumpTime;
+    [SerializeField] private float minJumpTime;
 
     private Rigidbody2D rigid;
     private BoxCollider2D collider;
@@ -20,7 +15,6 @@ public class Frog : Obstacle, IDamage
 
     void OnEnable()
     {
-        jumpTime = maxJumpTime;
         Spawn();
     }
 
@@ -47,28 +41,14 @@ public class Frog : Obstacle, IDamage
     {
         base.Move(Speed);
         animator.SetBool("Jump", false);
-
-        //jumpTime -= Time.deltaTime;
-
-
-        //if (jumpTime < 0)
-        //{
-        //    Jump();
-        //    jumpTime = maxJumpTime;
-        //}
-    }
-
-    void Jump()
-    {
-        rigid.velocity = Vector2.up * superJump;
-        animator.SetBool("Jump", true);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Jump();
+            StopCoroutine(Jump());
+            StartCoroutine(Jump());
         }
     }
 
@@ -79,5 +59,12 @@ public class Frog : Obstacle, IDamage
             OnDamage();
             collision.transform.GetChild(0).GetComponent<Player_Die>().Die();
         }
+    }
+
+    IEnumerator Jump()
+    {
+        yield return new WaitForSeconds(RandomSpeed(minJumpTime, maxJumpTime));
+        rigid.velocity = Vector2.up * superJump;
+        animator.SetBool("Jump", true);
     }
 }

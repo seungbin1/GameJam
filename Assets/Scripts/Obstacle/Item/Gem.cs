@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gem : Obstacle, IScore
 {
-    [SerializeField] private int scorePoint = 1000;
+    [SerializeField] private int scorePoint = 300;
     [SerializeField] private float speedX;
     [SerializeField] private float speedY;
     [SerializeField] private float minY, maxY;
@@ -13,6 +13,7 @@ public class Gem : Obstacle, IScore
     {
         Spawn();
         Return();
+        speedY = RandomSpeed(speedY-0.5f, speedY);
     }
 
     protected override void Update()

@@ -13,6 +13,9 @@ public class Eagle : Obstacle, IDamage
     void OnEnable()
     {
         Spawn();
+        speedY = RandomSpeed(speedY - 1, speedY);
+        minY = RandomSpeed(minY, minY + 0.5f);
+        maxY = RandomSpeed(maxY-0.5f, maxY);
     }
 
     protected override void Update()

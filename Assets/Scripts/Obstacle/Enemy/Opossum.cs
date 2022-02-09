@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Opossum : Obstacle, IDamage
 {
-    [SerializeField] private int attackPower;
     [SerializeField] private float speed;
 
     void OnEnable()
     {
+        speed = RandomSpeed(speed - 1, speed);
         Spawn();
     }
 

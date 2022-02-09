@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cherry : Obstacle, IHeal
-{
-    [SerializeField] private int healAmount = 1;
+public class Cherry : Obstacle
+{ 
+    [SerializeField] private int scorePoint = 100;
     [SerializeField] private float speedX;
     [SerializeField] private float speedY;
     [SerializeField] private float minY, maxY;
@@ -13,6 +13,7 @@ public class Cherry : Obstacle, IHeal
     {
         Spawn();
         Return();
+        speedY = RandomSpeed(speedY-1, speedY);
     }
 
     protected override void Update()
@@ -31,6 +32,11 @@ public class Cherry : Obstacle, IHeal
         }
     }
 
+    protected override void Spawn()
+    {
+        base.Spawn();
+    }
+
     protected virtual void Return(Collider2D collision = null)
     {
         base.Return();
@@ -45,12 +51,12 @@ public class Cherry : Obstacle, IHeal
         if (collision.gameObject.CompareTag("Player"))
         {
             Return(collision);
-            OnHeal(healAmount);
+            OnGetScore(scorePoint);
         }
     }
 
-    public void OnHeal(int heal)
+    public void OnGetScore(int score)
     {
-        PlayerStatsManager.Instance.TakeHeal(heal);
+        GameManager.Instance.GetScore(score);
     }
 }

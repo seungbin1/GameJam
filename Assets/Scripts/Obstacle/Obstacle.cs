@@ -16,6 +16,12 @@ public class Obstacle : MonoBehaviour
 
     }
 
+    protected virtual float RandomSpeed(float min, float max)
+    {
+        return Random.Range(min, max);
+    }
+
+
     protected virtual void Spawn()
     {
         transform.position = position;
