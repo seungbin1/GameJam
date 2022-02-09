@@ -778,7 +778,7 @@ GameObject:
   - component: {fileID: 613380795}
   - component: {fileID: 613380794}
   - component: {fileID: 613380793}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2056,6 +2056,7 @@ GameObject:
   - component: {fileID: 1413632136}
   - component: {fileID: 1413632137}
   - component: {fileID: 1413632138}
+  - component: {fileID: 1413632139}
   m_Layer: 0
   m_Name: Pool
   m_TagString: Untagged
@@ -2076,8 +2077,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7358673204404637168, guid: 2f345a194566fa144b20a59261782c41, type: 3}
-  maxSpawnLate: 12
-  minSpawnLate: 2
+  maxSpawnLate: 15
+  minSpawnLate: 8
 --- !u!114 &1413632132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2118,7 +2119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 9113907402702531526, guid: 57611a42badde804cbceedaf20640187, type: 3}
   maxSpawnLate: 12
-  minSpawnLate: 2
+  minSpawnLate: 8
 --- !u!114 &1413632135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2132,8 +2133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2024124464070846030, guid: 2d2f0adeed989ed47b421c0784558c4d, type: 3}
-  maxSpawnLate: 12
-  minSpawnLate: 2
+  maxSpawnLate: 18
+  minSpawnLate: 13
 --- !u!114 &1413632136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2147,8 +2148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2463100410603485034, guid: 6fac50d285e6ca9448d1c65c9d58e5f4, type: 3}
-  maxSpawnLate: 30
-  minSpawnLate: 25
+  maxSpawnLate: 20
+  minSpawnLate: 15
 --- !u!114 &1413632137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2187,6 +2188,24 @@ MonoBehaviour:
   - {fileID: 1022176384201961682, guid: b83f7dc6827d6bd4ebfdff8190a17261, type: 3}
   maxSpawnLate: 60
   minSpawnLate: 50
+--- !u!114 &1413632139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413632130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169679fb9b5f4ef4db08ea4c0152f30f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab:
+  - {fileID: 9206108049124340349, guid: c8ae8c7f83a3ddf468ca5828c971a063, type: 3}
+  - {fileID: 605761063364019825, guid: e051a2f9c1bb775499a43cf15ccae4af, type: 3}
+  - {fileID: 7593814761442319564, guid: 109d9238e81da35499dd6f6abd766ccf, type: 3}
+  maxSpawnLate: 6
+  minSpawnLate: 2
 --- !u!1 &1622025354
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,7 +2694,7 @@ GameObject:
   - component: {fileID: 1721028502}
   - component: {fileID: 1721028501}
   - component: {fileID: 1721028500}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
