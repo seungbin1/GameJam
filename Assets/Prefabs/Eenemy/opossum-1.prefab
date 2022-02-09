@@ -241,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 11, y: 0, z: -1}
   attackPower: 1
-  speed: 4
+  speed: 0
 --- !u!114 &5905427874325360765
 MonoBehaviour:
   m_ObjectHideFlags: 0

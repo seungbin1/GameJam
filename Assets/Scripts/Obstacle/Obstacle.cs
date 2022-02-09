@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField]
-    private Vector3 position;
+    [SerializeField] private Vector3 position;
 
     protected virtual void Start()
     {
