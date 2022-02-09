@@ -55,6 +55,8 @@ public class PlayerStatsManager : MonoBehaviour
     [SerializeField] private float jumpPower = 20f;
     public float JumpPower { get => jumpPower; }
 
+    
+
     public void TakeDamage()
     {
         this.hp--;

@@ -5,11 +5,11 @@ using LitJson;
 
 public class GameManager : MonoBehaviour
 {
-    //½Ì±ÛÅæ
+    //ï¿½Ì±ï¿½ï¿½ï¿½
     private static GameManager instance;
     public static GameManager Instance { get { return instance; } }
 
-    //ÀúÀå
+    //ï¿½ï¿½ï¿½ï¿½
     private int first = 0;
     public class Data
     {
@@ -40,13 +40,13 @@ public class GameManager : MonoBehaviour
 
     public Data data;
 
-    //Á¡¼ö
+    //ï¿½ï¿½ï¿½ï¿½
     [HideInInspector]
     private int score;
     [HideInInspector]
     public int bestScore;
 
-    //¼Ò¸®
+    //ï¿½Ò¸ï¿½
     [HideInInspector]
     public float mainSound;
     [HideInInspector]
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
-        //ÀúÀå ¼Ò¸®¼¼ÆÃ, ÃÖ°í Á¡¼ö, ºÒ·¯¿À±â
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¸ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
         first = PlayerPrefs.GetInt("First");
         if (first == 0)
         {
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
         data = new Data(bestScore, mainSound, gameSound, effectSound);
 
 
-        //°ÔÀÓ ½ÃÀÛ »óÅÂ
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         gameState = GameState.Main;
     }
 
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //ÀúÀå
+    //ï¿½ï¿½ï¿½ï¿½
 
     public void SaveData()
     {
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
         return jsondata;
     }
 
-    //ÃÖ°í Á¡¼ö
+    //ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
     public void GameOver()

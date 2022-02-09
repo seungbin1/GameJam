@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Background : MonoBehaviour
+public class InfiniteScrollingArea : MonoBehaviour
 {
     [SerializeField] private float speed = 2;
+    [SerializeField] private float denominator = 10f;
 
     private Vector3 startPos;
     private Vector3 firstArea;
@@ -17,7 +18,9 @@ public class Background : MonoBehaviour
 
     void Update()
     {
+        speed += Time.deltaTime / denominator;
         SpawnArea();
+        Debug.Log(string.Format("Scroll Speed : {0}", speed));
     }
 
     void SpawnArea()

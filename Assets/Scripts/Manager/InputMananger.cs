@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class InputMananger : MonoBehaviour
 {
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Jump"))
