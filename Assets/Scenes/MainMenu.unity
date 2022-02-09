@@ -618,7 +618,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  denominator: 10
 --- !u!4 &117676374
 Transform:
   m_ObjectHideFlags: 0
@@ -1084,7 +1083,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  denominator: 10
 --- !u!4 &374884073
 Transform:
   m_ObjectHideFlags: 0
@@ -1613,6 +1611,7 @@ MonoBehaviour:
   mainSound: 0
   gameSound: 0
   effectSound: 0
+  denominator: 10
   gameState: 0
 --- !u!4 &699875878
 Transform:
@@ -2637,7 +2636,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   maxHp: 3
-  speed: 0
   jumpPower: 20
 --- !u!4 &1136211232
 Transform:
@@ -4877,10 +4875,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1658368059072524862, guid: 3af927e20bf82b942a8d7013c1886ecd, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8a9178f3fcd234bb5bafb0b60d00206d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5039,7 +5037,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

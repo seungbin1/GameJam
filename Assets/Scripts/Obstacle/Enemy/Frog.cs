@@ -16,6 +16,7 @@ public class Frog : Obstacle, IDamage
     void OnEnable()
     {
         speed += GameManager.Instance.SpeedUP;
+        speed = RandomSpeed(speed - 0.5f, speed);
         Spawn();
     }
 

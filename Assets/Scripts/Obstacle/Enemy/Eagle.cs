@@ -14,6 +14,7 @@ public class Eagle : Obstacle, IDamage
     {
         speedX += GameManager.Instance.SpeedUP;
         Spawn();
+        speedX = RandomSpeed(speedX - 1, speedX);
         speedY = RandomSpeed(speedY - 1, speedY);
         minY = RandomSpeed(minY, minY + 0.5f);
         maxY = RandomSpeed(maxY-0.5f, maxY);
