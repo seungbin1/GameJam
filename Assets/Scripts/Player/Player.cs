@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     protected SpriteRenderer sprtie;
     protected Animator animator;
 
-
     protected virtual void Start()
     {
         rigid = transform.parent.GetComponent<Rigidbody2D>();

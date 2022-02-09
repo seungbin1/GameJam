@@ -20,7 +20,7 @@ public class InfiniteScrollingArea : MonoBehaviour
     {
         speed += Time.deltaTime / denominator;
         SpawnArea();
-        Debug.Log(string.Format("Scroll Speed : {0}", speed));
+        //Debug.Log(string.Format("Scroll Speed : {0}", speed));
     }
 
     void SpawnArea()
