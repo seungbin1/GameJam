@@ -54,6 +54,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public float effectSound;
 
+    private float speedUP = 0;
+    public float SpeedUP { get => speedUP; }
+    [SerializeField] private float denominator = 10f;
+
     public enum GameState
     {
         Main,
@@ -63,7 +67,6 @@ public class GameManager : MonoBehaviour
     }
 
     public GameState gameState;
-
 
     private void Awake()
     {
@@ -94,9 +97,18 @@ public class GameManager : MonoBehaviour
         effectSound = float.Parse(json["effectSound"].ToString());
         data = new Data(bestScore, mainSound, gameSound, effectSound);
 
-
         //���� ���� ����
         gameState = GameState.Main;
+    }
+
+    void Update()
+    {
+        PlusSpeed();
+    }
+
+    void PlusSpeed()
+    {
+        speedUP += Time.deltaTime / denominator;
     }
 
     public void InitScore()

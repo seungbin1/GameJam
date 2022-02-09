@@ -49,13 +49,8 @@ public class PlayerStatsManager : MonoBehaviour
     [SerializeField] private int maxHp = 3;
     public int MaxHp { get => maxHp; }
 
-    [SerializeField] private float speed = 0f;
-    public float Speed { get => speed; }
-
     [SerializeField] private float jumpPower = 20f;
     public float JumpPower { get => jumpPower; }
-
-    
 
     public void TakeDamage()
     {

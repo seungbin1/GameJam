@@ -8,6 +8,7 @@ public class Cactus : Obstacle
 
     void OnEnable()
     {
+        speed += GameManager.Instance.SpeedUP;
         Spawn();
     }
 

@@ -16,12 +16,6 @@ public class Player_Move : Player
     protected override void Update()
     {
         base.Update();
-        Run();
-    }
-
-    void Run()
-    {
-        rigid.velocity = new Vector2(Vector2.right.x * PlayerStatsManager.Instance.Speed, rigid.velocity.y);
     }
 
     void Jump()

@@ -27,11 +27,11 @@ public class Obstacle : MonoBehaviour
         transform.position = position;
     }
 
-    protected virtual void Move(float Speed)
+    protected virtual void Move(float speed)
     {
         if(GameManager.Instance.gameState == GameManager.GameState.Playing)
         {
-            transform.position -= new Vector3(Speed * Time.deltaTime, 0, 0);
+            transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
         }
     }
 
