@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
     public float gameSound;
     [HideInInspector]
     public float effectSound;
+
     public enum GameState
     {
         Main,
@@ -98,6 +99,11 @@ public class GameManager : MonoBehaviour
         gameState = GameState.Main;
     }
 
+    public void InitScore()
+    {
+        score = 0;
+    }
+
     public void GetScore(int score)
     {
         this.score = this.score + score;
@@ -107,6 +113,17 @@ public class GameManager : MonoBehaviour
     public int SetScore()
     {
         return score;
+    }
+
+    public void BestScore(int score)
+    {
+        JsonData json = Load();
+        if (score > bestScore)
+        {
+            bestScore = score;
+            data.SaveScore(bestScore);
+            Save(data);
+        }
     }
 
     //저장
@@ -129,14 +146,10 @@ public class GameManager : MonoBehaviour
     }
 
     //최고 점수
-    public void BestScore(int score)
+
+
+    public void GameOver()
     {
-        JsonData json = Load();
-        if (score > bestScore)
-        {
-            bestScore = score;
-            data.SaveScore(bestScore);
-            Save(data);
-        }
+        Time.timeScale = 0;
     }
 }

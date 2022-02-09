@@ -72,6 +72,7 @@ class CustomInspecter : Editor
         else if (selected.kind == GameMenu.Kind.GAMEOVER)
         {
             EditorGUILayout.PropertyField(gameOverProp);
+            EditorGUILayout.PropertyField(stopButtonProp);
         }
 
         else if (selected.kind == GameMenu.Kind.SETTINGEXIT)

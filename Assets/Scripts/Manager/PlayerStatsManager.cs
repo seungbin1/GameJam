@@ -43,7 +43,7 @@ public class PlayerStatsManager : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] private int hp = 3;
+    [SerializeField] private int hp = 1;
     public int HP { get => hp; }
 
     [SerializeField] private int maxHp = 3;
@@ -55,9 +55,13 @@ public class PlayerStatsManager : MonoBehaviour
     [SerializeField] private float jumpPower = 20f;
     public float JumpPower { get => jumpPower; }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage()
     {
-        this.hp -= damage;
+        this.hp--;
+        if (hp < 1)
+        {
+            Die();
+        }
         ClampHP();
     }
 
@@ -70,5 +74,13 @@ public class PlayerStatsManager : MonoBehaviour
     void ClampHP()
     {
         hp = Mathf.Clamp(hp, 0, maxHp);
+    }
+
+    void Die()
+    {
+        GameManager.Instance.gameState = GameManager.GameState.GameOver;
+        GameManager.Instance.GameOver();
+        GameManager.Instance.InitScore();
+        SoundManager.Instance.PauseGame();
     }
 }

@@ -21,9 +21,9 @@ public class Eagle : Obstacle, IDamage
         Return();
     }
 
-    public void OnDamage(int damage)
+    public void OnDamage()
     {
-        PlayerStatsManager.Instance.TakeDamage(damage);
+        PlayerStatsManager.Instance.TakeDamage();
     }
 
     protected override void Move(float Speed)
@@ -37,5 +37,12 @@ public class Eagle : Obstacle, IDamage
         }
     }
 
-   
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            OnDamage();
+            collision.transform.GetChild(0).GetComponent<Player_Die>().Die();
+        }
+    }
 }

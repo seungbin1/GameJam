@@ -12,7 +12,6 @@ public class SoundManager : MonoBehaviour
     {
         get
         {
-            Debug.Log(this);
             if(game == null)
             {
                 game = transform.Find("Game").GetComponent<AudioSource>();
@@ -91,7 +90,8 @@ public class SoundManager : MonoBehaviour
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    { 
+    {
+        if (this == null) return;
 
         if (GameManager.Instance.gameState == GameManager.GameState.Main)
         {

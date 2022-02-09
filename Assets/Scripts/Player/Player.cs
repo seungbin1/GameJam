@@ -9,17 +9,13 @@ public class Player : MonoBehaviour
     protected SpriteRenderer sprtie;
     protected Animator animator;
 
-    void Awake()
-    {
-        rigid = GetComponent<Rigidbody2D>();
-        collider = GetComponent<BoxCollider2D>();
-        sprtie = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-    }
 
     protected virtual void Start()
     {
-
+        rigid = transform.parent.GetComponent<Rigidbody2D>();
+        collider = transform.parent.GetComponent<BoxCollider2D>();
+        sprtie = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     protected virtual void Update()

@@ -16,9 +16,12 @@ public class GameMenu : MonoBehaviour
         EXIT,
         GAMEOVER,
         SETTINGEXIT,
-        GAMEEXIT
+        GAMEEXIT,
+        BESTSCORE
     }
     public Kind kind;
+
+    private Text bestScore;
 
     public GameObject stopButton;
     public GameObject menuObj=null;
@@ -30,39 +33,63 @@ public class GameMenu : MonoBehaviour
     private Button button;
 
     private AudioSource audioSource;
+
+    private void OnEnable()
+    {
+        if(kind == Kind.BESTSCORE)
+        {
+            bestScore = GetComponent<Text>();
+            BestScore();
+        }
+    }
+
     private void Start()
     {
-        //audioSource = GameObject.Find("SoundManager").transform.GetChild(0).GetComponent<AudioSource>();
-
+        audioSource = GameObject.Find("SoundManager").transform.GetChild(0).GetComponent<AudioSource>();
         button = GetComponent<Button>();
 
-        button.onClick.AddListener(GameButtonSound);
         switch (kind)
         {
             case Kind.GAMESTOP:
                 button.onClick.AddListener(GameStopButton);
+                button.onClick.AddListener(GameButtonSound);
                 break;
             case Kind.RESUME:
                 button.onClick.AddListener(Resume);
+                button.onClick.AddListener(GameButtonSound);
                 break;
             case Kind.RESTART:
                 button.onClick.AddListener(Restart);
+                button.onClick.AddListener(GameButtonSound);
                 break;
             case Kind.SETTING:
                 button.onClick.AddListener(Setting);
+                button.onClick.AddListener(GameButtonSound);
                 break;
             case Kind.EXIT:
                 button.onClick.AddListener(Exit);
+                button.onClick.AddListener(GameButtonSound);
                 break;
             case Kind.SETTINGEXIT:
                 button.onClick.AddListener(SettingExit);
+                button.onClick.AddListener(GameButtonSound);
                 break;
             case Kind.GAMEEXIT:
                 button.onClick.AddListener(GameExit);
+                button.onClick.AddListener(GameButtonSound);
                 break;
             case Kind.GAMESTART:
                 button.onClick.AddListener(GameStart);
+                button.onClick.AddListener(GameButtonSound);
                 break;
+        }
+    }
+
+    private void Update()
+    {
+        if(GameManager.Instance.gameState == GameManager.GameState.GameOver && kind==Kind.GAMEOVER)
+        {
+            GameOver();
         }
     }
 
@@ -134,6 +161,17 @@ public class GameMenu : MonoBehaviour
     //버튼 사운다
     private void GameButtonSound()
     {
-        //audioSource.Play();
+        audioSource.Play();
+    }
+
+    private void GameOver()
+    {
+        gameOver.SetActive(true);
+        stopButton.SetActive(false);
+    }
+
+    private void BestScore()
+    {
+        bestScore.text = "BestScore\n"+GameManager.Instance.data.bestscore;
     }
 }

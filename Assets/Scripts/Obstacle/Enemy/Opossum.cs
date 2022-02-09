@@ -18,9 +18,9 @@ public class Opossum : Obstacle, IDamage
         Return();
     }
 
-    public void OnDamage(int damage)
+    public void OnDamage()
     {
-        PlayerStatsManager.Instance.TakeDamage(damage);
+        PlayerStatsManager.Instance.TakeDamage();
     }
 
     protected override void Move(float Speed)
@@ -32,7 +32,8 @@ public class Opossum : Obstacle, IDamage
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            OnDamage(attackPower);
+            OnDamage();
+            collision.transform.GetChild(0).GetComponent<Player_Die>().Die();
         }
     }
 }

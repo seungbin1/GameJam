@@ -38,9 +38,9 @@ public class Frog : Obstacle, IDamage
         Return();
     }
 
-    public void OnDamage(int damage)
+    public void OnDamage()
     {
-        PlayerStatsManager.Instance.TakeDamage(damage);
+        PlayerStatsManager.Instance.TakeDamage();
     }
 
     protected override void Move(float Speed)
@@ -76,7 +76,8 @@ public class Frog : Obstacle, IDamage
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            OnDamage(attackPower);
-        }  
+            OnDamage();
+            collision.transform.GetChild(0).GetComponent<Player_Die>().Die();
+        }
     }
 }

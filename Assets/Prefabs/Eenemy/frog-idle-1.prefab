@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ee2a93d9349ae46bd3e178ad487795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 11, y: 0, z: -1}
+  position: {x: 10, y: 0, z: -1}
   player:
     serializedVersion: 2
     m_Bits: 128
@@ -189,7 +189,6 @@ MonoBehaviour:
   speed: 4
   superJump: 7
   maxJumpTime: 1
-  checker: {fileID: 4752550083864353740}
 --- !u!1 &9077955047329192162
 GameObject:
   m_ObjectHideFlags: 0

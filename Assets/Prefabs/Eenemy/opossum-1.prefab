@@ -239,9 +239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e899b7bcfe77542a3ded98e5e3ed48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 11, y: 0, z: -1}
+  position: {x: 10, y: 0, z: -1}
   attackPower: 1
-  speed: 0
+  speed: 2
 --- !u!114 &5905427874325360765
 MonoBehaviour:
   m_ObjectHideFlags: 0
