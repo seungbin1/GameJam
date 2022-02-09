@@ -79,6 +79,11 @@ class CustomInspecter : Editor
             EditorGUILayout.PropertyField(settingProp);
         }
 
+        else if(selected.kind == GameMenu.Kind.GAMESTART)
+        {
+            EditorGUILayout.PropertyField(sceneNameProp);
+        }
+
         serializedObject.ApplyModifiedProperties();
     }
 }

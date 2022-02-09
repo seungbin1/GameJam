@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     public float effectSound;
     public enum GameState
     {
+        Main,
         Playing,
         Stop,
         GameOver
@@ -76,7 +77,6 @@ public class GameManager : MonoBehaviour
         }
 
         //저장 소리세팅, 최고 점수, 불러오기
-
         first = PlayerPrefs.GetInt("First");
         if (first == 0)
         {
@@ -93,6 +93,9 @@ public class GameManager : MonoBehaviour
         effectSound = float.Parse(json["effectSound"].ToString());
         data = new Data(bestScore, mainSound, gameSound, effectSound);
 
+
+        //게임 시작 상태
+        gameState = GameState.Main;
     }
 
     public void GetScore(int score)
@@ -107,6 +110,11 @@ public class GameManager : MonoBehaviour
     }
 
     //저장
+
+    public void SaveData()
+    {
+        Save(data);
+    }
     public void Save(Data data)
     {
         JsonData jsondata = JsonMapper.ToJson(data);

@@ -2,12 +2,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEditor;
-
+using System;
 
 public class GameMenu : MonoBehaviour
 {
     public enum Kind
     {
+        GAMESTART,
         GAMESTOP,
         RESUME,
         RESTART,
@@ -15,7 +16,6 @@ public class GameMenu : MonoBehaviour
         EXIT,
         GAMEOVER,
         SETTINGEXIT,
-        GAMESETTINGEXIT,
         GAMEEXIT
     }
     public Kind kind;
@@ -32,7 +32,7 @@ public class GameMenu : MonoBehaviour
     private AudioSource audioSource;
     private void Start()
     {
-        audioSource = GameObject.Find("SoundManager").transform.GetChild(0).GetComponent<AudioSource>();
+        //audioSource = GameObject.Find("SoundManager").transform.GetChild(0).GetComponent<AudioSource>();
 
         button = GetComponent<Button>();
 
@@ -60,14 +60,23 @@ public class GameMenu : MonoBehaviour
             case Kind.GAMEEXIT:
                 button.onClick.AddListener(GameExit);
                 break;
+            case Kind.GAMESTART:
+                button.onClick.AddListener(GameStart);
+                break;
         }
     }
+
+
+
     //게임 씬에서 게임 멈춤 버튼
     private void GameStopButton()
     {
         Time.timeScale = 0;
         menuObj.SetActive(true);
         stopButton.SetActive(false);
+        GameManager.Instance.gameState = GameManager.GameState.Stop;
+
+        SoundManager.Instance.PauseGame();
     }
 
     //게임 멈춤에서 계속하기 버튼
@@ -76,6 +85,15 @@ public class GameMenu : MonoBehaviour
         Time.timeScale = 1;
         menuObj.SetActive(false);
         stopButton.SetActive(true);
+
+        SoundManager.Instance.OnGame();
+    }
+    //메인 씬에서 게임 씬으로 이동
+    private void GameStart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(sceneName);
+        GameManager.Instance.gameState = GameManager.GameState.Playing;
     }
 
     //게임 다시시작
@@ -83,6 +101,7 @@ public class GameMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(sceneName);
+        GameManager.Instance.gameState = GameManager.GameState.Playing;
     }
 
     //게임 세팅
@@ -96,11 +115,13 @@ public class GameMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+        GameManager.Instance.gameState = GameManager.GameState.Main;
     }
 
     //세팅 나가기 및 볼륨 저장
     private void SettingExit()
     {
+        GameManager.Instance.SaveData();
         settingObj.SetActive(false);
     }
 
@@ -113,6 +134,6 @@ public class GameMenu : MonoBehaviour
     //버튼 사운다
     private void GameButtonSound()
     {
-        audioSource.Play();
+        //audioSource.Play();
     }
 }

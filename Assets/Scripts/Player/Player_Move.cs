@@ -29,6 +29,7 @@ public class Player_Move : Player
         if (IsGround())
         {
             rigid.AddForce(Vector2.up * PlayerStatsManager.Instance.JumpPower, ForceMode2D.Impulse);
+            SoundManager.Instance.GetJump().Play();
         }   
     }
 

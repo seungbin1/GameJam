@@ -1,36 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager instance;
+    private static SoundManager instance;
+    public static SoundManager Instance { get { return instance; } }
 
-    private AudioSource button, game, jump;
-
-    enum Audio
+    public AudioSource Game
     {
-        button, 
-        game, 
-        jump
+        get
+        {
+            Debug.Log(this);
+            if(game == null)
+            {
+                game = transform.Find("Game").GetComponent<AudioSource>();
+            }
+
+            return game;
+        }
     }
+    private AudioSource button, game, jump, main;
 
     private void Awake()
-    {
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
-
-    private void Start()
     {
         button = transform.Find("Button").GetComponent<AudioSource>();
         game = transform.Find("Game").GetComponent<AudioSource>();
         jump = transform.Find("Jump").GetComponent<AudioSource>();
+        main = transform.Find("Main").GetComponent<AudioSource>();
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
+
 
     private void OnDestroy()
     {
-        if(instance == this)
+        if(Instance == this)
         {
             instance = null;
         }
@@ -51,6 +67,40 @@ public class SoundManager : MonoBehaviour
     {
         return jump;
     }
+    public AudioSource GetMain()
+    {
+        return main;
+    }
 
+    public void OnMain()
+    {
+        main.Play();
+        Game.Stop();
+    }
 
+    public void OnGame()
+    {
+        print(game);
+        Game.Play();
+        main.Stop();
+    }
+
+    public void PauseGame()
+    {
+        game.Pause();
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    { 
+
+        if (GameManager.Instance.gameState == GameManager.GameState.Main)
+        {
+            OnMain();
+        }
+
+        else if (GameManager.Instance.gameState == GameManager.GameState.Playing)
+        {
+            OnGame();
+        }
+    }
 }

@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3077e55d24aaa314199e9c83f5e70f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kind: 4
+  kind: 5
   stopButton: {fileID: 0}
   menuObj: {fileID: 0}
   settingObj: {fileID: 0}
@@ -987,50 +987,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!1 &554934206
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 554934208}
-  - component: {fileID: 554934207}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &554934207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554934206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edaa004087153a4499dde9d65a9588a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameState: 0
---- !u!4 &554934208
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554934206}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.098739, y: -0.4379205, z: -0.9402189}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &603977889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,7 +1267,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &628970451
 GameObject:
@@ -1474,7 +1430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3077e55d24aaa314199e9c83f5e70f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kind: 1
+  kind: 2
   stopButton: {fileID: 877059778}
   menuObj: {fileID: 2097260280}
   settingObj: {fileID: 0}
@@ -1679,7 +1635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3077e55d24aaa314199e9c83f5e70f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kind: 0
+  kind: 1
   stopButton: {fileID: 877059778}
   menuObj: {fileID: 2097260280}
   settingObj: {fileID: 0}
@@ -1720,9 +1676,8 @@ Transform:
   - {fileID: 535776197}
   - {fileID: 161856955}
   - {fileID: 2108346199}
-  - {fileID: 1216405764}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173360470
 MonoBehaviour:
@@ -1871,7 +1826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3077e55d24aaa314199e9c83f5e70f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kind: 2
+  kind: 3
   stopButton: {fileID: 0}
   menuObj: {fileID: 1622025354}
   settingObj: {fileID: 0}
@@ -2009,12 +1964,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216405763}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1300192730}
-  m_Father: {fileID: 1173360469}
-  m_RootOrder: 7
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1248693719
 GameObject:
@@ -2177,7 +2132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3077e55d24aaa314199e9c83f5e70f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kind: 2
+  kind: 3
   stopButton: {fileID: 0}
   menuObj: {fileID: 2097260280}
   settingObj: {fileID: 0}
@@ -2426,7 +2381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3077e55d24aaa314199e9c83f5e70f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kind: 4
+  kind: 5
   stopButton: {fileID: 0}
   menuObj: {fileID: 0}
   settingObj: {fileID: 0}
