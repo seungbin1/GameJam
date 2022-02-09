@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> areas = new List<GameObject>();
     [SerializeField] private float speed = 2;
-    [SerializeField] private float minPosition =-9;
-    [SerializeField] private float initPosition = 12;
+
+    private Vector3 startPos;
+    private Vector3 firstArea;
+
+    void Start()
+    {
+        startPos = transform.position;
+        firstArea = transform.GetChild(0).TransformPoint(transform.GetChild(0).position);
+    }
 
     void Update()
     {
@@ -16,13 +22,11 @@ public class Background : MonoBehaviour
 
     void SpawnArea()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        transform.position -= Vector3.right * Time.deltaTime * speed;
+
+        if (transform.GetChild(1).TransformPoint(transform.GetChild(1).position).x <= firstArea.x)
         {
-            transform.GetChild(i).transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
-            if (transform.GetChild(i).transform.localPosition.x <= minPosition)
-            {
-                transform.GetChild(i).transform.localPosition = new Vector3(initPosition, 0, 0);
-            }
+            transform.position = startPos;
         }
     }
 }
