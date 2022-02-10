@@ -5,6 +5,7 @@ using UnityEngine;
 public class InfiniteScrollingArea : MonoBehaviour
 {
     [SerializeField] private float speed = 2f;
+    [SerializeField] private float maxSpeed = 5f;
 
     private Vector3 startPos;
     private Vector3 firstArea;
@@ -18,11 +19,13 @@ public class InfiniteScrollingArea : MonoBehaviour
     void Update()
     {
         SpawnArea();
+        Debug.Log(string.Format("Scroll Speed : {0}", speed));
     }
 
     void SpawnArea()
     {
-        transform.position -= Vector3.right * Time.deltaTime * (speed + GameManager.Instance.SpeedUP);
+        transform.position -=
+            Vector3.right * Time.deltaTime * Mathf.Clamp(speed * GameManager.Instance.SpeedUP, speed * GameManager.Instance.SpeedUP, maxSpeed); 
 
         if (transform.GetChild(1).TransformPoint(transform.GetChild(1).position).x <= firstArea.x)
         {

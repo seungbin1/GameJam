@@ -670,8 +670,7 @@ MonoBehaviour:
   mainSound: 0
   gameSound: 0
   effectSound: 0
-  denominator: 10
-  maxSpeed: 8
+  speedInterval: 10
   gameState: 0
 --- !u!4 &699875878
 Transform:
@@ -1198,7 +1197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   maxHp: 3
-  jumpPower: 20
+  jumpPower: 8
 --- !u!4 &1136211232
 Transform:
   m_ObjectHideFlags: 0
@@ -1259,6 +1258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  maxSpeed: 2
 --- !u!1 &1301986821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,7 +2009,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
