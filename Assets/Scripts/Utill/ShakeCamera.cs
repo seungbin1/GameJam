@@ -29,7 +29,7 @@ public class ShakeCamera : MonoBehaviour
 
         float power = 10f;
 
-        while(shakeTime > 0.0f)
+        while(shakeTime > 0.0f&& GameManager.Instance.gameState == GameManager.GameState.Playing)
         {
             float x = 0;
             float y = 0;
