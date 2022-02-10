@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 901520053173887135}
   m_Layer: 10
   m_Name: cherry-1
-  m_TagString: Untagged
+  m_TagString: Cherry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 12, y: 0, z: -1.5}
-  scorePoint: 1000
+  scorePoint: 300
   speedX: 2.25
   speedY: 2
   minY: -1.5

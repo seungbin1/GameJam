@@ -7,6 +7,7 @@ public class EventManager
 {
     private static Hashtable eventHashtable = new Hashtable();
 
+    // Action 타입
     public static void AddEvent_Action(string eventName, Action addEvent)
     {
         if (eventHashtable.ContainsKey(eventName))
@@ -18,7 +19,7 @@ public class EventManager
             eventHashtable.Add(eventName, addEvent);
         }
     }
-    public static void AddEvent_Action(string eventName, Action<GameObject> addEvent)
+    public static void AddEvent_Action_Action(string eventName, Action<Action> addEvent)
     {
         if (eventHashtable.ContainsKey(eventName))
         {
@@ -29,7 +30,7 @@ public class EventManager
             eventHashtable.Add(eventName, addEvent);
         }
     }
-    public static void AddEvent_Action(string eventName, Action<float, float> addEvent)
+    public static void AddEvent_Action_GameObject(string eventName, Action<GameObject> addEvent)
     {
         if (eventHashtable.ContainsKey(eventName))
         {
@@ -40,7 +41,7 @@ public class EventManager
             eventHashtable.Add(eventName, addEvent);
         }
     }
-    public static void AddEvent_Action(string eventName, Action<Action> addEvent)
+    public static void AddEvent_Action_Int(string eventName, Action<int> addEvent)
     {
         if (eventHashtable.ContainsKey(eventName))
         {
@@ -51,6 +52,41 @@ public class EventManager
             eventHashtable.Add(eventName, addEvent);
         }
     }
+    public static void AddEvent_Action_Float_Float(string eventName, Action<float, float> addEvent)
+    {
+        if (eventHashtable.ContainsKey(eventName))
+        {
+            eventHashtable[eventName] = addEvent;
+        }
+        else
+        {
+            eventHashtable.Add(eventName, addEvent);
+        }
+    }
+    public static void AddEvent_Action_Bool(string eventName, Action<bool> addEvent)
+    {
+        if (eventHashtable.ContainsKey(eventName))
+        {
+            eventHashtable[eventName] = addEvent;
+        }
+        else
+        {
+            eventHashtable.Add(eventName, addEvent);
+        }
+    }
+    public static void AddEvent_Action_Vector3(string eventName, Action<Vector3> addEvent)
+    {
+        if (eventHashtable.ContainsKey(eventName))
+        {
+            eventHashtable[eventName] = addEvent;
+        }
+        else
+        {
+            eventHashtable.Add(eventName, addEvent);
+        }
+    }
+
+    // Function 타입
     public static void AddEvent_Function(string eventName, Func<bool> addEvent)
     {
         if (eventHashtable.ContainsKey(eventName))
@@ -113,6 +149,32 @@ public class EventManager
             }
         }
     }
+    public static void TriggerEvent_Action(string eventName, bool param)
+    {
+        Action<bool> action;
+
+        if (eventHashtable.ContainsKey(eventName))
+        {
+            if (eventHashtable[eventName] is Action<bool>)
+            {
+                action = (Action<bool>)eventHashtable[eventName]; // 언박싱
+                action?.Invoke(param);
+            }
+        }
+    }
+    public static void TriggerEvent_Action(string eventName, int param)
+    {
+        Action<int> action;
+
+        if (eventHashtable.ContainsKey(eventName))
+        {
+            if (eventHashtable[eventName] is Action<int>)
+            {
+                action = (Action<int>)eventHashtable[eventName]; // 언박싱
+                action?.Invoke(param);
+            }
+        }
+    }
     public static void TriggerEvent_Action(string eventName, Func<bool> param)
     {
         Action<Func<bool>> action;
@@ -122,6 +184,19 @@ public class EventManager
             if (eventHashtable[eventName] is Action<Func<bool>>)
             {
                 action = (Action<Func<bool>>)eventHashtable[eventName]; // 언박싱
+                action?.Invoke(param);
+            }
+        }
+    }
+    public static void TriggerEvent_Action(string eventName, Vector3 param)
+    {
+        Action<Vector3> action;
+
+        if (eventHashtable.ContainsKey(eventName))
+        {
+            if (eventHashtable[eventName] is Action<Vector3>)
+            {
+                action = (Action<Vector3>)eventHashtable[eventName]; // 언박싱
                 action?.Invoke(param);
             }
         }
@@ -141,7 +216,7 @@ public class EventManager
     }
 
     // bool 타입
-    public static bool TriggerEvent_Function(string eventName)
+    public static bool TriggerEvent_Boolean(string eventName)
     {
         Func<bool> function;
 
@@ -155,5 +230,22 @@ public class EventManager
         }
 
         return false;
+    }
+
+    // Vecter2 타입
+    public static Vector2 TriggerEvent_Vector2(string eventName)
+    {
+        Func<Vector2> function;
+
+        if (eventHashtable.ContainsKey(eventName))
+        {
+            if (eventHashtable[eventName] is Func<Vector2>)
+            {
+                function = (Func<Vector2>)eventHashtable[eventName];
+                return function.Invoke();
+            }
+        }
+
+        return new Vector2(0, 0);
     }
 }
