@@ -20,7 +20,7 @@ public class SoundManager : MonoBehaviour
             return game;
         }
     }
-    private AudioSource button, game, jump, main, die;
+    private AudioSource button, game, jump, main, die, coin;
 
     private void Awake()
     {
@@ -29,6 +29,7 @@ public class SoundManager : MonoBehaviour
         jump = transform.Find("Jump").GetComponent<AudioSource>();
         main = transform.Find("Main").GetComponent<AudioSource>();
         die = transform.Find("Die").GetComponent<AudioSource>();
+        coin = transform.Find("Coin").GetComponent<AudioSource>();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
 
@@ -76,6 +77,12 @@ public class SoundManager : MonoBehaviour
     {
         die.Play();
     }
+
+    public void OnCoin()
+    {
+        coin.Play();
+    }
+
     public void OnMain()
     {
         main.Play();

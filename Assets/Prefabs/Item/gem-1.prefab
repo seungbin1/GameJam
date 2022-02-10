@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1204477261010066822}
   - component: {fileID: 6569203044177377548}
   - component: {fileID: 975929554902207783}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: gem-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2797821819724563732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.5}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6241aec50892fe74aa49e70f75a158d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 12, y: 0, z: -1}
+  position: {x: 12, y: 0, z: -1.5}
   scorePoint: 1000
   speedX: 3
   speedY: 2

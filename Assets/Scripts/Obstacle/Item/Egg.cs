@@ -12,12 +12,12 @@ public class Egg : Obstacle
     void OnEnable()
     {
         Spawn();
-        Return();
     }
 
-    protected override void Update()
+    void Update()
     {
         Move(speedX);
+        Return();
     }
 
     protected override void Move(float Speed)
@@ -38,6 +38,7 @@ public class Egg : Obstacle
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            SoundManager.Instance.OnCoin();
             Return(collision);
             OnHeal(healAmount);
             collision.GetComponent<Player_GetEgg>().GetEgg(GetEggType());

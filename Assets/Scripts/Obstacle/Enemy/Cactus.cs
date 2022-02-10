@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Cactus : Obstacle
 {
-    [SerializeField] private float speed;
-
+    [SerializeField] private float speed = 2f;
     void OnEnable()
     {
-        speed += GameManager.Instance.SpeedUP;
         Spawn();
     }
 
-    protected override void Update()
+    void Update()
     {
-        Move(speed);
+        Move(speed+GameManager.Instance.SpeedUP);
         Return();
     }
 
@@ -23,9 +21,9 @@ public class Cactus : Obstacle
         PlayerStatsManager.Instance.TakeDamage();
     }
 
-    protected override void Move(float Speed)
+    protected override void Move(float speed)
     {
-        base.Move(Speed);
+        transform.position -= Vector3.right * Time.deltaTime * (speed + GameManager.Instance.SpeedUP);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

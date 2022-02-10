@@ -28,7 +28,7 @@ public class Frog : Obstacle, IDamage
         animator = GetComponent<Animator>();
     }
 
-    protected override void Update()
+    void Update()
     {
         Move(speed);
         Return();

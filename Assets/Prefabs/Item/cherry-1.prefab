@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2178928240424529640}
   - component: {fileID: 5213451608666581713}
   - component: {fileID: 901520053173887135}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cherry-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2463100410603485034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.5}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe785295f9bd424ba097fbac76c0cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 12, y: 0, z: -1}
+  position: {x: 12, y: 0, z: -1.5}
   scorePoint: 1000
   speedX: 2
   speedY: 2

@@ -88,6 +88,22 @@ public class GameMenu : MonoBehaviour
         {
             GameOver();
         }
+
+        if (kind == Kind.GAMESTOP&&Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(GameManager.Instance.gameState == GameManager.GameState.Playing)
+            {
+                GameStopButton();
+                GameButtonSound();
+            }
+            
+            else if (GameManager.Instance.gameState == GameManager.GameState.Stop)
+            {
+                Resume();
+                GameButtonSound();
+            }
+
+        }
     }
 
 
@@ -97,7 +113,7 @@ public class GameMenu : MonoBehaviour
     {
         Time.timeScale = 0;
         menuObj.SetActive(true);
-        stopButton.SetActive(false);
+        stopButton.GetComponent<Button>().interactable = false;
         GameManager.Instance.gameState = GameManager.GameState.Stop;
 
         SoundManager.Instance.PauseGame();
@@ -108,8 +124,9 @@ public class GameMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         menuObj.SetActive(false);
-        stopButton.SetActive(true);
+        stopButton.GetComponent<Button>().interactable = true;
 
+        GameManager.Instance.gameState = GameManager.GameState.Playing;
         SoundManager.Instance.OnGame();
     }
     //메인 씬에서 게임 씬으로 이동
@@ -164,7 +181,7 @@ public class GameMenu : MonoBehaviour
     private void GameOver()
     {
         gameOver.SetActive(true);
-        stopButton.SetActive(false);
+        stopButton.GetComponent<Button>().interactable = false;
     }
 
     private void BestScore()

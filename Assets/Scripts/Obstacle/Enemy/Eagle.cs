@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Eagle : Obstacle, IDamage
 {
-    [SerializeField] private LayerMask layer;
     [SerializeField] private int attackPower;
     [SerializeField] private float speedX;   
     [SerializeField] private float speedY;
@@ -20,7 +19,7 @@ public class Eagle : Obstacle, IDamage
         maxY = RandomSpeed(maxY-0.5f, maxY);
     }
 
-    protected override void Update()
+    void Update()
     {
         Move(speedX);
         Return();

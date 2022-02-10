@@ -13,7 +13,7 @@ public class Opossum : Obstacle, IDamage
         Spawn();
     }
 
-    protected override void Update()
+    void Update()
     {
         Move(speed);
         Return();

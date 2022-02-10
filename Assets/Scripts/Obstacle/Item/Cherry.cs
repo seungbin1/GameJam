@@ -12,13 +12,13 @@ public class Cherry : Obstacle
     void OnEnable()
     {
         Spawn();
-        Return();
         speedY = RandomSpeed(speedY-1, speedY);
     }
 
-    protected override void Update()
+    void Update()
     {
         Move(speedX);
+        Return();
     }
 
     protected override void Move(float Speed)
@@ -50,6 +50,7 @@ public class Cherry : Obstacle
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            SoundManager.Instance.OnCoin();
             Return(collision);
             OnGetScore(scorePoint);
         }
