@@ -18,7 +18,6 @@ public class InfiniteScrollingArea : MonoBehaviour
     void Update()
     {
         SpawnArea();
-        //Debug.Log(string.Format("Scroll Speed : {0}", speed));
     }
 
     void SpawnArea()
