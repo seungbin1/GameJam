@@ -2172,8 +2172,8 @@ MonoBehaviour:
   - {fileID: 8206261638965691601, guid: a18048e833bbf4a448a8ae5d80f68edb, type: 3}
   - {fileID: 5473182869388712775, guid: c290c982d42eab640a8d3bc8680b4564, type: 3}
   - {fileID: 1022176384201961682, guid: b83f7dc6827d6bd4ebfdff8190a17261, type: 3}
-  maxSpawnLate: 60
-  minSpawnLate: 50
+  maxSpawnLate: 1
+  minSpawnLate: 0
 --- !u!114 &1413632139
 MonoBehaviour:
   m_ObjectHideFlags: 0

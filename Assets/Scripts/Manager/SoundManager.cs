@@ -20,7 +20,7 @@ public class SoundManager : MonoBehaviour
             return game;
         }
     }
-    private AudioSource button, game, jump, main;
+    private AudioSource button, game, jump, main, die;
 
     private void Awake()
     {
@@ -28,6 +28,7 @@ public class SoundManager : MonoBehaviour
         game = transform.Find("Game").GetComponent<AudioSource>();
         jump = transform.Find("Jump").GetComponent<AudioSource>();
         main = transform.Find("Main").GetComponent<AudioSource>();
+        die = transform.Find("Die").GetComponent<AudioSource>();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
 
@@ -71,6 +72,10 @@ public class SoundManager : MonoBehaviour
         return main;
     }
 
+    public void OnDie()
+    {
+        die.Play();
+    }
     public void OnMain()
     {
         main.Play();
@@ -79,7 +84,6 @@ public class SoundManager : MonoBehaviour
 
     public void OnGame()
     {
-        print(game);
         Game.Play();
         main.Stop();
     }
@@ -87,6 +91,16 @@ public class SoundManager : MonoBehaviour
     public void PauseGame()
     {
         game.Pause();
+    }
+
+    public void StopGame()
+    {
+        game.Stop();
+    }
+
+    public void OnButton()
+    {
+        button.Play();
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)

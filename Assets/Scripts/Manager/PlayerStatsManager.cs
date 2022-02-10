@@ -78,6 +78,6 @@ public class PlayerStatsManager : MonoBehaviour
         GameManager.Instance.gameState = GameManager.GameState.GameOver;
         GameManager.Instance.GameOver();
         GameManager.Instance.InitScore();
-        SoundManager.Instance.PauseGame();
+        SoundManager.Instance.StopGame();
     }
 }

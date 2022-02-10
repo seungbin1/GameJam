@@ -188,8 +188,8 @@ MonoBehaviour:
   attackPower: 2
   speedX: 3
   speedY: 4
-  minY: -1.5
-  maxY: 4
+  minY: -2
+  maxY: 2.5
 --- !u!114 &4957895174039184756
 MonoBehaviour:
   m_ObjectHideFlags: 0

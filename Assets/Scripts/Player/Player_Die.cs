@@ -7,7 +7,9 @@ public class Player_Die : MonoBehaviour
 
     public void Die()
     {
+        SoundManager.Instance.OnDie();
         Destroy(transform.GetChild(0).gameObject);
+        ShakeCamera.instance.OnShakeCamera();
 
         StopCoroutine(Twinkle(null,transform.gameObject));
         StartCoroutine(Twinkle(null,transform.gameObject));

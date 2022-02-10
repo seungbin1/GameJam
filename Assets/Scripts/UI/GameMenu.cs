@@ -32,8 +32,6 @@ public class GameMenu : MonoBehaviour
 
     private Button button;
 
-    private AudioSource audioSource;
-
     private void OnEnable()
     {
         if(kind == Kind.BESTSCORE)
@@ -45,7 +43,6 @@ public class GameMenu : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GameObject.Find("SoundManager").transform.GetChild(0).GetComponent<AudioSource>();
         button = GetComponent<Button>();
 
         switch (kind)
@@ -161,7 +158,7 @@ public class GameMenu : MonoBehaviour
     //버튼 사운다
     private void GameButtonSound()
     {
-        audioSource.Play();
+        SoundManager.Instance.OnButton();
     }
 
     private void GameOver()
