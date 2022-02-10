@@ -24,8 +24,9 @@ public class InfiniteScrollingArea : MonoBehaviour
 
     void SpawnArea()
     {
-        transform.position -=
-            Vector3.right * Time.deltaTime * Mathf.Clamp(speed * GameManager.Instance.SpeedUP, speed * GameManager.Instance.SpeedUP, maxSpeed); 
+        speed = Mathf.Clamp(speed + GameManager.Instance.SpeedUP, speed + GameManager.Instance.SpeedUP, maxSpeed);
+
+        transform.position -= Vector3.right * Time.deltaTime * speed;
 
         if (transform.GetChild(1).TransformPoint(transform.GetChild(1).position).x <= firstArea.x)
         {
