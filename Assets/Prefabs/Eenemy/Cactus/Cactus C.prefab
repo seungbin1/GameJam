@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fb5c599db460049906dc1a5f9c45d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 10, y: 0, z: -1}
+  position: {x: 11, y: 0, z: -1}
   speed: 2
 --- !u!1 &9206108049977093555
 GameObject:

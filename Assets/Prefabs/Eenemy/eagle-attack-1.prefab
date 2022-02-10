@@ -188,7 +188,7 @@ MonoBehaviour:
   attackPower: 2
   speedX: 3
   speedY: 4
-  minY: -1
+  minY: -1.5
   maxY: 4
 --- !u!114 &4957895174039184756
 MonoBehaviour:

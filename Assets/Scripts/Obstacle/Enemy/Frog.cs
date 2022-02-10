@@ -59,7 +59,7 @@ public class Frog : Obstacle, IDamage
         if (collision.gameObject.CompareTag("Player"))
         {
             OnDamage();
-            collision.transform.GetChild(0).GetComponent<Player_Die>().Die();
+            collision.transform.GetComponent<Player_Die>().Die();
         }
     }
 

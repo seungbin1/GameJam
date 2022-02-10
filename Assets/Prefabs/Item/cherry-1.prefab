@@ -155,9 +155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe785295f9bd424ba097fbac76c0cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 11, y: 0, z: -1}
+  position: {x: 12, y: 0, z: -1}
   scorePoint: 1000
   speedX: 2
-  speedY: 3
-  minY: -1
+  speedY: 2
+  minY: -1.5
   maxY: 1

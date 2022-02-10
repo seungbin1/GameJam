@@ -33,7 +33,7 @@ public class Cactus : Obstacle
         if (collision.gameObject.CompareTag("Player"))
         {
             OnDamage();
-            collision.transform.GetChild(0).GetComponent<Player_Die>().Die();
+            collision.transform.GetComponent<Player_Die>().Die();
         }
     }
 }
