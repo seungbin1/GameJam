@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     private float speedUP = 0;
     public float SpeedUP { get => speedUP; }
     [SerializeField] private float speedInterval = 10f; // 속도 인터벌
+    [SerializeField] private float maxSpeed = 5f;
 
     public enum GameState
     {
@@ -111,7 +112,7 @@ public class GameManager : MonoBehaviour
 
     void PlusSpeed()
     {
-        speedUP += Time.deltaTime / speedInterval;
+        speedUP = Mathf.Clamp(speedUP+Time.deltaTime / speedInterval,speedUP, maxSpeed);
     }
 
     public void InitScore()
@@ -166,5 +167,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         speedUP = 0;
+        PlayerStatsManager.Instance.InitHp();
     }
 }

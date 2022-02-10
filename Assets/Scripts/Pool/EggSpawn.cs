@@ -12,11 +12,15 @@ public class EggSpawn : MonoBehaviour
     [SerializeField]
     private float minSpawnLate = 2;
 
+    private float clampMin, clampMax;
+
     private float spawnlate;
 
     private void Start()
     {
-        spawnlate = Random.Range(minSpawnLate, maxSpawnLate);
+        clampMin = minSpawnLate;
+        clampMax = maxSpawnLate;
+        RandomLate();
     }
 
     private void Update()
@@ -26,9 +30,21 @@ public class EggSpawn : MonoBehaviour
             spawnlate -= Time.deltaTime;
             if (spawnlate <= 0)
             {
-                spawnlate = Random.Range(minSpawnLate, maxSpawnLate);
-                ObjectPool.instacne.GetObject(prefab[Random.Range(0,prefab.Length)]);
+                RandomLate();
+                ObjectPool.instacne.GetObject(prefab[Random.Range(0, prefab.Length)]);
             }
         }
+    }
+    private void RandomLate()
+    {
+        minSpawnLate = RandomSpawnLate(minSpawnLate - 0.5f, minSpawnLate);
+        maxSpawnLate = RandomSpawnLate(maxSpawnLate - 0.5f, maxSpawnLate);
+
+        spawnlate = RandomSpawnLate(minSpawnLate, maxSpawnLate);
+    }
+
+    private float RandomSpawnLate(float min, float max)
+    {
+        return Mathf.Clamp(Random.Range(min, max), clampMin / 2, clampMax);
     }
 }

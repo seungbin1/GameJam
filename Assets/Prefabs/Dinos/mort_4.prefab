@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7374214711807164730}
   - component: {fileID: 7598900514300076142}
   - component: {fileID: 1993396192777422104}
-  - component: {fileID: -26707399963963884}
   - component: {fileID: 3238994986120965280}
   m_Layer: 0
   m_Name: mort_4
@@ -104,21 +103,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-26707399963963884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064875333792162491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d51d879a535664ca3102441de67d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!114 &3238994986120965280
 MonoBehaviour:
   m_ObjectHideFlags: 0

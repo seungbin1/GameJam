@@ -40,6 +40,10 @@ public class Player_Die : MonoBehaviour
             sprite.color = new Color(1, 1, 1, 0);
             yield return new WaitForSeconds(0.2f);
             sprite.color = new Color(1, 1, 1, 1);
+            yield return new WaitForSeconds(0.25f);
+            sprite.color = new Color(1, 1, 1, 0);
+            yield return new WaitForSeconds(0.25f);
+            sprite.color = new Color(1, 1, 1, 1);
         }
 
         else

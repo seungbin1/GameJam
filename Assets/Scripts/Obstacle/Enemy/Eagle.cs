@@ -2,33 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Eagle : Obstacle, IDamage
+public class Eagle : Obstacle
 {
-    [SerializeField] private int attackPower;
     [SerializeField] private float speedX;   
     [SerializeField] private float speedY;
+    private float currentSpeed;
     [SerializeField] private float minY, maxY;
 
     void OnEnable()
     {
-        speedX += GameManager.Instance.SpeedUP;
+        currentSpeed = speedX + GameManager.Instance.SpeedUP;
         Spawn();
         speedX = RandomSpeed(speedX - 1, speedX);
         speedY = RandomSpeed(speedY - 1, speedY);
-        minY = RandomSpeed(minY, minY + 0.5f);
+        minY = RandomSpeed(minY, minY +0.5f);
         maxY = RandomSpeed(maxY-0.5f, maxY);
     }
 
     void Update()
     {
-        Move(speedX);
+        Move(currentSpeed);
         Return();
     }
 
-    public void OnDamage()
-    {
-        PlayerStatsManager.Instance.TakeDamage();
-    }
 
     protected override void Move(float Speed)
     {

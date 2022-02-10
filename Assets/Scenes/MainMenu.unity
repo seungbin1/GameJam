@@ -671,7 +671,8 @@ MonoBehaviour:
   mainSound: 0
   gameSound: 0
   effectSound: 0
-  speedInterval: 10
+  speedInterval: 25
+  maxSpeed: 3
   gameState: 0
 --- !u!4 &699875878
 Transform:
@@ -1198,7 +1199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   maxHp: 3
-  jumpPower: 8
+  jumpPower: 9
 --- !u!4 &1136211232
 Transform:
   m_ObjectHideFlags: 0
@@ -1259,7 +1260,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  maxSpeed: 2
 --- !u!1 &1301986821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,6 +1618,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1145440523}
     m_Modifications:
+    - target: {fileID: 251481262, guid: e9bc575d3fc49d141aa8fcd38bca95c6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8424392411510728634, guid: e9bc575d3fc49d141aa8fcd38bca95c6, type: 3}
       propertyPath: m_Name
       value: Dino Area (1)

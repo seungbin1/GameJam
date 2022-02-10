@@ -590,7 +590,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  maxSpeed: 5
 --- !u!4 &279401860
 Transform:
   m_ObjectHideFlags: 0
@@ -776,7 +775,6 @@ GameObject:
   - component: {fileID: 613380797}
   - component: {fileID: 613380796}
   - component: {fileID: 613380795}
-  - component: {fileID: 613380793}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -784,21 +782,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &613380793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613380792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d51d879a535664ca3102441de67d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!95 &613380795
 Animator:
   serializedVersion: 3
@@ -2064,7 +2047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7358673204404637168, guid: 2f345a194566fa144b20a59261782c41, type: 3}
-  maxSpawnLate: 15
+  maxSpawnLate: 13
   minSpawnLate: 8
 --- !u!114 &1413632132
 MonoBehaviour:
@@ -2105,8 +2088,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 9113907402702531526, guid: 57611a42badde804cbceedaf20640187, type: 3}
-  maxSpawnLate: 12
-  minSpawnLate: 8
+  maxSpawnLate: 20
+  minSpawnLate: 10
 --- !u!114 &1413632135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2120,8 +2103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2024124464070846030, guid: 2d2f0adeed989ed47b421c0784558c4d, type: 3}
-  maxSpawnLate: 18
-  minSpawnLate: 13
+  maxSpawnLate: 20
+  minSpawnLate: 15
 --- !u!114 &1413632136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2135,8 +2118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2463100410603485034, guid: 6fac50d285e6ca9448d1c65c9d58e5f4, type: 3}
-  maxSpawnLate: 20
-  minSpawnLate: 15
+  maxSpawnLate: 30
+  minSpawnLate: 25
 --- !u!114 &1413632137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2150,8 +2133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2797821819724563732, guid: 5edceb2d428339549a1472f9f9e93623, type: 3}
-  maxSpawnLate: 40
-  minSpawnLate: 30
+  maxSpawnLate: 60
+  minSpawnLate: 50
 --- !u!114 &1413632138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2173,8 +2156,8 @@ MonoBehaviour:
   - {fileID: 8206261638965691601, guid: a18048e833bbf4a448a8ae5d80f68edb, type: 3}
   - {fileID: 5473182869388712775, guid: c290c982d42eab640a8d3bc8680b4564, type: 3}
   - {fileID: 1022176384201961682, guid: b83f7dc6827d6bd4ebfdff8190a17261, type: 3}
-  maxSpawnLate: 1
-  minSpawnLate: 0
+  maxSpawnLate: 20
+  minSpawnLate: 10
 --- !u!114 &1413632139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2192,7 +2175,7 @@ MonoBehaviour:
   - {fileID: 605761063364019825, guid: e051a2f9c1bb775499a43cf15ccae4af, type: 3}
   - {fileID: 7593814761442319564, guid: 109d9238e81da35499dd6f6abd766ccf, type: 3}
   maxSpawnLate: 6
-  minSpawnLate: 2
+  minSpawnLate: 4
 --- !u!1 &1622025354
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,6 +2665,7 @@ GameObject:
   - component: {fileID: 1721028501}
   - component: {fileID: 1721028500}
   - component: {fileID: 1721028504}
+  - component: {fileID: 1721028505}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -2725,7 +2709,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.25
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2744,7 +2728,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 0.35}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -2755,7 +2739,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!4 &1721028503
 Transform:
@@ -2784,6 +2768,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bab8c88d58690a479b470c2881a0bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1721028505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721028499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d51d879a535664ca3102441de67d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &2022650740
 GameObject:
   m_ObjectHideFlags: 0

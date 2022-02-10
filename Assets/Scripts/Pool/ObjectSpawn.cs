@@ -12,11 +12,15 @@ public class ObjectSpawn : MonoBehaviour
     [SerializeField]
     private float minSpawnLate=2;
 
+    private float clampMin, clampMax;
+
     private float spawnlate;
 
     private void Start()
     {
-        spawnlate = Random.Range(minSpawnLate, maxSpawnLate);    
+        clampMin = minSpawnLate;
+        clampMax = maxSpawnLate;
+        RandomLate();
     }
 
     private void Update()
@@ -26,9 +30,22 @@ public class ObjectSpawn : MonoBehaviour
             spawnlate -= Time.deltaTime;
             if(spawnlate <= 0)
             {
-                spawnlate = Random.Range(minSpawnLate, maxSpawnLate); ;
+                RandomLate();
                 ObjectPool.instacne.GetObject(prefab);
             }
         }
+    }
+
+    private void RandomLate()
+    {
+        minSpawnLate = RandomSpawnLate(minSpawnLate - minSpawnLate/20, minSpawnLate);
+        maxSpawnLate = RandomSpawnLate(maxSpawnLate - maxSpawnLate / 20, maxSpawnLate);
+
+        spawnlate = RandomSpawnLate(minSpawnLate, maxSpawnLate);
+    }
+
+    private float RandomSpawnLate(float min, float max)
+    {
+        return Mathf.Clamp(Random.Range(min, max),clampMin/2, clampMax);
     }
 }

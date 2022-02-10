@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3820696414458585261}
   - component: {fileID: 8608423041065846231}
   - component: {fileID: 7251861846014058780}
-  - component: {fileID: -498651996934740391}
   - component: {fileID: -8731857703110386976}
   m_Layer: 0
   m_Name: nico_4
@@ -104,21 +103,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-498651996934740391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7416985077724404543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d51d879a535664ca3102441de67d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!114 &-8731857703110386976
 MonoBehaviour:
   m_ObjectHideFlags: 0

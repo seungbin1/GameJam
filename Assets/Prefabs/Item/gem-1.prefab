@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 12, y: 0, z: -1.5}
   scorePoint: 1000
-  speedX: 3
+  speedX: 2.25
   speedY: 2
   minY: -1.5
   maxY: 1

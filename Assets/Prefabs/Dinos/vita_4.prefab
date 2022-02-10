@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8122120615865008297}
   - component: {fileID: 6770756490832878682}
   - component: {fileID: 303287267721965966}
-  - component: {fileID: -9012226866688318774}
   - component: {fileID: 4210909960212587908}
   m_Layer: 0
   m_Name: vita_4
@@ -104,21 +103,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-9012226866688318774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3117801358919954667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d51d879a535664ca3102441de67d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!114 &4210909960212587908
 MonoBehaviour:
   m_ObjectHideFlags: 0

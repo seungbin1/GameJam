@@ -2,26 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Opossum : Obstacle, IDamage
+public class Opossum : Obstacle
 {
     [SerializeField] private float speed;
+    private float currentSpeed;
 
     void OnEnable()
     {
-        speed += GameManager.Instance.SpeedUP;
+        currentSpeed = speed + GameManager.Instance.SpeedUP;
         speed = RandomSpeed(speed - 1, speed);
         Spawn();
     }
 
     void Update()
     {
-        Move(speed);
+        Move(currentSpeed);
         Return();
-    }
-
-    public void OnDamage()
-    {
-        PlayerStatsManager.Instance.TakeDamage();
     }
 
     protected override void Move(float Speed)

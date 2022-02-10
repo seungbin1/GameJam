@@ -35,6 +35,12 @@ public class Obstacle : MonoBehaviour
         }
     }
 
+    protected virtual void OnDamage()
+    {
+        PlayerStatsManager.Instance.TakeDamage();
+        gameObject.GetComponent<Collider2D>().enabled = false;
+    }
+
     protected virtual void Return()
     {
         if(transform.position.x < -10)

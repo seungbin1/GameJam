@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Frog : Obstacle, IDamage
-{ 
-    [SerializeField] private float speed;
+public class Frog : Obstacle
+{
+    [SerializeField] private float speed = 2f;
     [SerializeField] private float superJump;
     [SerializeField] private float maxJumpTime;
     [SerializeField] private float minJumpTime;
@@ -15,8 +15,6 @@ public class Frog : Obstacle, IDamage
 
     void OnEnable()
     {
-        speed += GameManager.Instance.SpeedUP;
-        speed = RandomSpeed(speed - 0.5f, speed);
         Spawn();
     }
 
@@ -34,14 +32,9 @@ public class Frog : Obstacle, IDamage
         Return();
     }
 
-    public void OnDamage()
-    {
-        PlayerStatsManager.Instance.TakeDamage();
-    }
-
     protected override void Move(float Speed)
     {
-        base.Move(Speed);
+        transform.position -= Vector3.right * Time.deltaTime * (speed + GameManager.Instance.SpeedUP);
         animator.SetBool("Jump", false);
     }
 
@@ -66,6 +59,7 @@ public class Frog : Obstacle, IDamage
     IEnumerator Jump()
     {
         yield return new WaitForSeconds(RandomSpeed(minJumpTime, maxJumpTime));
+        rigid.velocity = Vector2.zero;
         rigid.velocity = Vector2.up * superJump;
         animator.SetBool("Jump", true);
     }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1163699839157847548}
   - component: {fileID: 4229523850744540405}
   - component: {fileID: 2772306748933674586}
-  - component: {fileID: 9143709873729278499}
   - component: {fileID: 1085842415454789199}
   m_Layer: 0
   m_Name: olaf_4
@@ -104,21 +103,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9143709873729278499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3143638553692222830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d51d879a535664ca3102441de67d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!114 &1085842415454789199
 MonoBehaviour:
   m_ObjectHideFlags: 0
