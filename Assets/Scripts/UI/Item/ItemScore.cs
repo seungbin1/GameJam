@@ -14,23 +14,21 @@ public class ItemScore : MonoBehaviour
         cherryText = transform.GetChild(0).GetComponent<Text>();
         gemText = transform.GetChild(1).GetComponent<Text>();
 
-        OnScoreText(false);
+        OnChrryText(false);
+        OnGemText(false);
 
         EventManager.AddEvent_Action_Int("GETITEMSCORE", GetItemScore); 
-        EventManager.AddEvent_Action_Bool("ONSCORETEXT", OnScoreText);
         EventManager.AddEvent_Action_GameObject("SETITEMSCOREPOSITION", SetItemScorePosition);
     }
 
-    void OnScoreText(bool isOn) // 텍스트 On/Off
+    void OnChrryText(bool isOn) // 텍스트 On/Off
     {
-        if (cherryText.gameObject.activeSelf == false)
-        {
-            cherryText.gameObject.SetActive(isOn);
-        }
-        else
-        {
-            gemText.gameObject.SetActive(isOn);
-        }
+        cherryText.gameObject.SetActive(isOn);
+    }
+
+    void OnGemText(bool isOn) // 텍스트 On/Off
+    {
+        gemText.gameObject.SetActive(isOn);
     }
 
     void GetItemScore(int score) // 텍스트에 점수 적용
@@ -50,33 +48,55 @@ public class ItemScore : MonoBehaviour
         switch (item.tag)
         {
             case "Cherry":
-                cherryText.color = Color.yellow;
+                if (cherryText.gameObject.activeSelf == true)
+                {
+                    cherryText.color = Color.yellow;
+                }
+                else
+                {
+                    gemText.color = Color.yellow;
+                }
                 break;
             case "Gem":
-                gemText.color = Color.blue;
+                if (cherryText.gameObject.activeSelf == true)
+                {
+                    cherryText.color = Color.blue;
+                }
+                else
+                {
+                    gemText.color = Color.blue;
+                }
                 break;
         }
     }
 
     void SetItemScorePosition(GameObject item) // 텍스트 위치 
     {
-        OnScoreText(true);
         if (cherryText.gameObject.activeSelf == false)
         {
+            OnChrryText(true);
             cherryText.transform.position = Camera.main.WorldToScreenPoint(item.transform.position);
+            StartCoroutine(HideCherryScore());
         }
         else
         {
+            OnGemText(true);
             gemText.transform.position = Camera.main.WorldToScreenPoint(item.transform.position);
+            StartCoroutine(HideGemScore());
         }
         ItemScoreColor(item);
-        StartCoroutine(HideItemScore());
     }
 
-    IEnumerator HideItemScore()
+    IEnumerator HideCherryScore()
     {
         yield return new WaitForSeconds(1f);
-        OnScoreText(false);
+        OnChrryText(false);
+    }   
+    
+    IEnumerator HideGemScore()
+    {
+        yield return new WaitForSeconds(1f);
+        OnChrryText(false);
     }
 
     void OnDestroy()

@@ -2326,8 +2326,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2463100410603485034, guid: 6fac50d285e6ca9448d1c65c9d58e5f4, type: 3}
-  maxSpawnLate: 1
-  minSpawnLate: 2
+  maxSpawnLate: 30
+  minSpawnLate: 25
 --- !u!114 &1413632137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2341,8 +2341,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2797821819724563732, guid: 5edceb2d428339549a1472f9f9e93623, type: 3}
-  maxSpawnLate: 2
-  minSpawnLate: 3
+  maxSpawnLate: 60
+  minSpawnLate: 50
 --- !u!114 &1413632138
 MonoBehaviour:
   m_ObjectHideFlags: 0
