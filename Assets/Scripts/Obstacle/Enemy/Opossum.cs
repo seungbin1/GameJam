@@ -9,8 +9,9 @@ public class Opossum : Obstacle
 
     void OnEnable()
     {
+
         currentSpeed = speed + GameManager.Instance.SpeedUP;
-        speed = RandomSpeed(speed - 1, speed);
+        currentSpeed = RandomSpeed(currentSpeed - 1, currentSpeed);
         Spawn();
     }
 

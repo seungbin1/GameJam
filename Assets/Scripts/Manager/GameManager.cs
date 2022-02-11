@@ -108,6 +108,10 @@ public class GameManager : MonoBehaviour
         {
             PlusSpeed();
         } 
+        if(gameState == GameState.Main)
+        {
+            InitScore();
+        }
     }
 
     void PlusSpeed()

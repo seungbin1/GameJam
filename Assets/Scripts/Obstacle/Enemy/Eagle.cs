@@ -6,22 +6,22 @@ public class Eagle : Obstacle
 {
     [SerializeField] private float speedX;   
     [SerializeField] private float speedY;
-    private float currentSpeed;
+    private float currentSpeedX, currentSpeedY;
     [SerializeField] private float minY, maxY;
 
     void OnEnable()
     {
-        currentSpeed = speedX + GameManager.Instance.SpeedUP;
+        currentSpeedX = speedX + GameManager.Instance.SpeedUP;
         Spawn();
-        speedX = RandomSpeed(speedX - 1, speedX);
-        speedY = RandomSpeed(speedY - 1, speedY);
+        currentSpeedX = RandomSpeed(currentSpeedX - 1, currentSpeedX);
+        currentSpeedY = RandomSpeed(speedY - 1, speedY);
         minY = RandomSpeed(minY, minY +0.5f);
         maxY = RandomSpeed(maxY-0.5f, maxY);
     }
 
     void Update()
     {
-        Move(currentSpeed);
+        Move(currentSpeedX);
         Return();
     }
 
@@ -29,11 +29,11 @@ public class Eagle : Obstacle
     protected override void Move(float Speed)
     {
         base.Move(Speed);
-        transform.position += new Vector3(0, speedY * Time.deltaTime, 0);
+        transform.position += new Vector3(0, currentSpeedY * Time.deltaTime, 0);
 
         if (transform.position.y < minY || transform.position.y > maxY)
         {
-            speedY = -speedY;
+            currentSpeedY = -currentSpeedY;
         }
     }
 
