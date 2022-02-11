@@ -8,6 +8,7 @@ public class Eagle : Obstacle
     [SerializeField] private float speedY;
     private float currentSpeedX, currentSpeedY;
     [SerializeField] private float minY, maxY;
+    private float min, max;
 
     void OnEnable()
     {
@@ -15,8 +16,8 @@ public class Eagle : Obstacle
         Spawn();
         currentSpeedX = RandomSpeed(currentSpeedX - 1, currentSpeedX);
         currentSpeedY = RandomSpeed(speedY - 1, speedY);
-        minY = RandomSpeed(minY, minY +0.5f);
-        maxY = RandomSpeed(maxY-0.5f, maxY);
+        min = RandomSpeed(minY, minY +0.5f);
+        max = RandomSpeed(maxY-0.5f, maxY);
     }
 
     void Update()
@@ -31,7 +32,7 @@ public class Eagle : Obstacle
         base.Move(Speed);
         transform.position += new Vector3(0, currentSpeedY * Time.deltaTime, 0);
 
-        if (transform.position.y < minY || transform.position.y > maxY)
+        if (transform.position.y < min || transform.position.y > max)
         {
             currentSpeedY = -currentSpeedY;
         }
